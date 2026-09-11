@@ -1,0 +1,79 @@
+{
+  "sites_checked": [
+    "vous",
+    "passion",
+    "mariners",
+    "elevation",
+    "perazim_v5"
+  ],
+  "results": {
+    "vous": {
+      "target": "vous",
+      "url": "https://vouschurch.com",
+      "status": "OK",
+      "http_code": 200,
+      "tier_hit": "unknown",
+      "blocked": false,
+      "title_returned": "?",
+      "content_length_chars": 101030,
+      "content_has_nav_tag": true,
+      "content_has_footer_tag": false,
+      "content_has_img_tags": 107,
+      "content_has_script_tags": 30,
+      "raw_snippet_400": "<!DOCTYPE html><!-- Last Published: Thu Sep 10 2026 16:25:42 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain=\"www.vouschurch.com\" data-wf-page=\"630e11f2c18b813a82f96f88\" data-wf-site=\"5f0cd5fb99f5470b194d3979\"><head><meta charset=\"utf-8\"/><link href=\"https://cdn.prod.website-files.com\" rel=\"preconnect\" crossorigin=\"anonymous\"/><title>VOUS Church | Miami, FL Church | Rich &amp; DawnCh"
+    },
+    "passion": {
+      "target": "passion",
+      "url": "https://passioncitychurch.com",
+      "status": "OK",
+      "http_code": 200,
+      "tier_hit": "unknown",
+      "blocked": false,
+      "title_returned": "?",
+      "content_length_chars": 129339,
+      "content_has_nav_tag": true,
+      "content_has_footer_tag": true,
+      "content_has_img_tags": 16,
+      "content_has_script_tags": 18,
+      "raw_snippet_400": "<!doctype html><html lang=\"en-US\"> <head> <title> Passion City Church - For God. For people. For the city. For the world. </title> <meta charset=\"UTF-8\" /> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover\"> <link rel=\"pingback\" href=\"https://passioncitychurch.com/xmlrpc.php\" /> <meta name=\"robots\" content"
+    },
+    "mariners": {
+      "target": "mariners",
+      "url": "https://marinerschurch.org",
+      "status": "OK",
+      "http_code": 200,
+      "tier_hit": "unknown",
+      "blocked": false,
+      "title_returned": "?",
+      "content_length_chars": 200185,
+      "content_has_nav_tag": true,
+      "content_has_footer_tag": true,
+      "content_has_img_tags": 34,
+      "content_has_script_tags": 41,
+      "raw_snippet_400": "\n<!doctype html>\n<html lang=\"en-US\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n\t<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />\n\n\t<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->\n\t<title>Mariners Church - Inspiring"
+    },
+    "elevation": {
+      "target": "elevation",
+      "url": "https://elevationchurch.org",
+      "status": "ERROR_NETWORK",
+      "error": "timed out",
+      "tier_hit": null,
+      "blocked": false
+    },
+    "perazim_v5": {
+      "target": "perazim_v5",
+      "url": "http://127.0.0.1:8090/",
+      "status": "OK",
+      "http_code": 200,
+      "tier_hit": "unknown",
+      "blocked": false,
+      "title_returned": "?",
+      "content_length_chars": 0,
+      "content_has_nav_tag": false,
+      "content_has_footer_tag": false,
+      "content_has_img_tags": 0,
+      "content_has_script_tags": 0,
+      "raw_snippet_400": "(no HTML content returned \u2014 page may be JS-rendered or bot-walled)"
+    }
+  }
+}

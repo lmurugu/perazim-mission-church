@@ -1,0 +1,35 @@
+{
+  "sermons": [
+    {
+      "id": "yt-3O6meSzCl3I",
+      "title": "Embu Pastors & Leaders Couples Seminar 2025 @PMC, EMBU",
+      "speaker": "Bishop Dr David Mutweri",
+      "channel": "Perazim Mission Church EMBU",
+      "youtube_id": "3O6meSzCl3I",
+      "video_url": "https://www.youtube.com/embed/3O6meSzCl3I",
+      "watch_url": "https://www.youtube.com/watch?v=3O6meSzCl3I",
+      "thumbnail": "https://i.ytimg.com/vi/3O6meSzCl3I/maxresdefault.jpg",
+      "topic": "Leadership",
+      "passage": null,
+      "date": "2025-07-03",
+      "views": 178,
+      "verified": true,
+      "source": "YouTube og: externalId + watch page metadata, harvested 2026-09-01"
+    }
+  ],
+  "speakers": [
+    {
+      "id": "bishop-mutweri",
+      "name": "Bishop Dr David Mutweri",
+      "role": "Founder & General Overseer",
+      "photo": "assets/bishop_real.jpg",
+      "verified": true
+    }
+  ],
+  "_meta": {
+    "seeded_count": 1,
+    "verified_count": 1,
+    "fabricated_count": 0,
+    "note": "Only 1 sermon is publicly indexed on @perazimchurchembu at seed time. UI must show 'More sermons coming' when array grows beyond current count. Source: youtube.com/@perazimchurchembu (channel UC2Yv5gJArnHSuXApBupkv-A), harvested 2026-09-01."
+  }
+}

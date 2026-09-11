@@ -1,0 +1,34 @@
+[
+  {
+    "label": "white on #7a4a2e (button bg)",
+    "fg": "#ffffff",
+    "bg": "#7a4a2e",
+    "need": 4.5,
+    "ratio": 7.38,
+    "PASS": true
+  },
+  {
+    "label": "accent #cf6a2e on bg",
+    "fg": "#cf6a2e",
+    "bg": "#fdf3e8",
+    "need": 3.0,
+    "ratio": 3.33,
+    "PASS": true
+  },
+  {
+    "label": "accent #c8642a on bg",
+    "fg": "#c8642a",
+    "bg": "#fdf3e8",
+    "need": 3.0,
+    "ratio": 3.61,
+    "PASS": true
+  },
+  {
+    "label": "accent #c05c22 on bg",
+    "fg": "#c05c22",
+    "bg": "#fdf3e8",
+    "need": 3.0,
+    "ratio": 4.0,
+    "PASS": true
+  }
+]

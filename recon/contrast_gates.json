@@ -1,0 +1,77 @@
+{
+  "results": [
+    {
+      "label": "primary-dark on bg",
+      "fg": "#7a4a2e",
+      "bg": "#fdf3e8",
+      "need": 4.5,
+      "ratio": 6.73,
+      "PASS": true,
+      "role": "primary text/dark buttons on cream bg"
+    },
+    {
+      "label": "ink on bg",
+      "fg": "#1c1712",
+      "bg": "#fdf3e8",
+      "need": 4.5,
+      "ratio": 16.23,
+      "PASS": true,
+      "role": "body text on cream bg"
+    },
+    {
+      "label": "ink on surface",
+      "fg": "#1c1712",
+      "bg": "#ffffff",
+      "need": 4.5,
+      "ratio": 17.79,
+      "PASS": true,
+      "role": "body text on white cards"
+    },
+    {
+      "label": "white on primary",
+      "fg": "#ffffff",
+      "bg": "#aa6f45",
+      "need": 4.5,
+      "ratio": 4.14,
+      "PASS": false,
+      "role": "white text on primary button"
+    },
+    {
+      "label": "primary on bg",
+      "fg": "#aa6f45",
+      "bg": "#fdf3e8",
+      "need": 3.0,
+      "ratio": 3.78,
+      "PASS": true,
+      "role": "primary as LARGE text/decorative on bg (AA large)"
+    },
+    {
+      "label": "accent-orange on bg",
+      "fg": "#df7d39",
+      "bg": "#fdf3e8",
+      "need": 3.0,
+      "ratio": 2.69,
+      "PASS": false,
+      "role": "accent decorative on bg (AA large only)"
+    },
+    {
+      "label": "purple on bg",
+      "fg": "#8029a9",
+      "bg": "#fdf3e8",
+      "need": 3.0,
+      "ratio": 6.82,
+      "PASS": true,
+      "role": "purple decorative/leadership (AA large only)"
+    },
+    {
+      "label": "primary-dark on surface",
+      "fg": "#7a4a2e",
+      "bg": "#ffffff",
+      "need": 4.5,
+      "ratio": 7.38,
+      "PASS": true,
+      "role": "primary-dark text on white surface"
+    }
+  ],
+  "all_pass": false
+}

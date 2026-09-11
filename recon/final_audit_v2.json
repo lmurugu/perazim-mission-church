@@ -1,0 +1,89 @@
+{
+  "session": "perazim-v2-design-unified-2026-09-01",
+  "mode": "BUILD (local-first per user correction: 'build on the local PC going forward')",
+  "completed": "2026-09-01T22:40:00Z",
+  "plan": "/home/murugu/.hermes/plans/2026-09-01_190039-perazim-v2-design-unified.md",
+  "local_build_dir": "/home/murugu/perazim-site/",
+  "live_dev_server": "http://127.0.0.1:8090/ (python3 -m http.server, local)",
+  "stages": {
+    "A_recon": {
+      "status": "VERIFIED",
+      "method": "argus execute_web_task attempted (title-only schema, insufficient) then escalated to Prometheus scrape_intent for deep HTML recon (tool deviation logged)",
+      "sites": {
+        "vouschurch.com": "recon-vous.md — nav (Visit VOUS/Sermons/Crews/Vision/Give), video-led hero, 107 imgs/10 vids on home",
+        "passioncitychurch.com": "recon-passion.md — nav (About/Atlanta/DC/Give/Locations), Give+Join Our Team CTAs, footer email signup",
+        "marinerschurch.org": "recon-mariners.md — mission h1, 10-campus mega-menu, campus cards with service times, Plan a Visit page",
+        "elevationchurch.org": "BLOCKED (tier-5 halt, bot protection); IA taken from landing scrape (sermons/egroups/ekidz/giving/events/locations/outreach)"
+      },
+      "comparative": "/home/murugu/perazim-site/recon/comparative.md (per-pattern table + 3 concrete adoptions + honest non-copies)"
+    },
+    "B_unified_design_skill": {
+      "status": "VERIFIED",
+      "artifact": "/home/murugu/.hermes/skills/design/SKILL.md (7580 bytes)",
+      "skill_view": "PASS — description/tags parsed, contains SELF-HEALING LOOP + Auto-load directive",
+      "cross_link": "design_mcp/SKILL.md → added 'MASTER orchestrator design' row"
+    },
+    "C_palette": {
+      "status": "VERIFIED",
+      "extraction": "extract_palette.py on 5 real photos → palette_combined.json",
+      "tokens": {
+        "--color-bg": "#fdf3e8",
+        "--color-surface": "#ffffff",
+        "--color-ink": "#1c1712",
+        "--color-primary": "#aa6f45",
+        "--color-primary-dark": "#7a4a2e",
+        "--color-accent": "#cf6a2e",
+        "--color-purple": "#6d2388"
+      },
+      "contrast_gates": "8/8 PASS after fixes: white/#7a4a2e=7.38, ink/bg=16.23, ink/surface=17.79, primary-dark/bg=6.73, primary-dark/surface=7.38, primary/bg=3.78(AA-large), accent #cf6a2e/bg=3.33(AA-large), purple/bg=6.82"
+    },
+    "D_rebuild": {
+      "status": "VERIFIED 15/15 checks",
+      "index_html": "v1 27920 bytes → v2 24617 bytes (fully rewritten, new IA)",
+      "gallery": "11 real photos in assets/gallery/ (gallery-01..11) + gallery_manifest.json with FB provenance",
+      "favicon": "assets/favicon.png + favicon.ico (palette 'P' monogram placeholder, 457 B)",
+      "verified_facts_preserved": {"mutweri_mentions": 9, "pending_tags": 16, "legal_case": true, "branches": true, "map": true, "honesty_note_murogo": true},
+      "no_rickroll": true,
+      "js_features_kept": "dynamic hero (Nairobi TZ), plan-a-visit 3-step modal + mailto, sermon hub filter, hamburger (new)",
+      "featured_video": "static embed of real 3O6meSzCl3I added (progressive enhancement)"
+    },
+    "E_self_healing": {
+      "status": "VERIFIED 3 passes",
+      "log": "/home/murugu/perazim-site/recon/self-healing-log.md",
+      "passes": [
+        "PASS 1: Spacing 3→4 — 10 off-scale values normalized to 4/8/12/16/24/32/48/64 scale",
+        "PASS 2: Typography 4→5 — text-wrap:balance, brand ::selection, eyebrow letter-spacing",
+        "PASS 3: Consistency 4→5 — scroll-margin-top 84px on all section[id] (sticky-nav anchor overlap fix)"
+      ],
+      "final_scores": "H=4 S=4 C=4 T=5 K=5 W=4 (all ≥4; cap satisfied)"
+    }
+  },
+  "user_axes_before_after": {
+    "data": {"before": 6, "after": 6, "note": "All verified facts preserved verbatim; nothing new invented"},
+    "scraping": {"before": 8, "after": 8, "note": "Same verified harvest base"},
+    "images": {"before": 0, "after": 8, "note": "0 → 11 real FB photos in gallery + real cover hero + bishop photo + favicon; captions marked descriptive-pending, provenance on every tile"},
+    "design": {"before": 5, "after": 8, "note": "Flora palette from real photos (WCAG-passed), reference-inspired IA, helper-spacing, micro-interactions, self-healing loop"},
+    "stability": {"before": 7, "after": 8, "note": "15/15 verification bundle green; all app.js ids present; hamburger + scroll-margin fixes"},
+    "overall": {"before": 4, "after": 8, "note": "weighted towards images+design which were the stated gaps"}
+  },
+  "deliverables": {
+    "D1 unified design skill": "VERIFIED — ~/.hermes/skills/design/SKILL.md loads via skill_view",
+    "D2 redesigned site": "VERIFIED — local /home/murugu/perazim-site/index.html, 15/15 checks",
+    "D3 self-healing loop": "VERIFIED — 3 passes logged with real edits",
+    "D4 final report": "this file + final chat report"
+  },
+  "tool_deviation_notes": [
+    "argus execute_web_task returned fixed title-only schema (steps_taken=1 each call) — could NOT do deep nav capture; escalated to Prometheus scrape_intent which returns full HTML. Recon design decisions rely on real HTML extraction + landing-scrape IA, documented in comparative.md.",
+    "browser_exec unavailable (browser.use_real_profile on, no Chromium default on this host) — no visual screenshot verification; verification is DOM/HTML-based (15/15 checks).",
+    "elevationchurch.ored detail pages bot-blocked — marked BLOCKED, not fabricated, used IA only.",
+    "Building on local PC per user correction - live dev server on 127.0.0.1:8090; VPS untouched this turn (except recon reads of reference sites)."
+  ],
+  "still_pending_user_input": [
+    "Sunday service time + midweek times",
+    "exact street address in Embu",
+    "public phone + email",
+    "complete branch roster + Murogo relationship",
+    "official church logo (favicon placeholder marked)"
+  ],
+  "next_step": "On your word: copy the local build to VPS :8088 for public preview (deploy is separate from build), and/or supply the pending facts."
+}

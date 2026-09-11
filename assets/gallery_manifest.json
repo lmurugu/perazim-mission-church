@@ -1,0 +1,83 @@
+{
+  "schema": "perazim-gallery-v1",
+  "count": 11,
+  "photos": [
+    {
+      "file": "gallery-01.jpg",
+      "source_file": "real_1364x1364_e56f1701.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 8395,
+      "caption_hint": ""
+    },
+    {
+      "file": "gallery-02.jpg",
+      "source_file": "real_1365x1365_02f344e4.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 6883,
+      "caption_hint": ""
+    },
+    {
+      "file": "gallery-03.jpg",
+      "source_file": "real_1365x1365_2679aafa.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 6018,
+      "caption_hint": ""
+    },
+    {
+      "file": "gallery-04.jpg",
+      "source_file": "real_1365x1365_2c504259.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 4333,
+      "caption_hint": ""
+    },
+    {
+      "file": "gallery-05.jpg",
+      "source_file": "real_1365x1365_b191249f.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 4122,
+      "caption_hint": ""
+    },
+    {
+      "file": "gallery-06.jpg",
+      "source_file": "real_1365x1365_c905b842.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 5456,
+      "caption_hint": ""
+    },
+    {
+      "file": "gallery-07.jpg",
+      "source_file": "real_1365x1365_ccbec62f.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 7106,
+      "caption_hint": ""
+    },
+    {
+      "file": "gallery-08.jpg",
+      "source_file": "real_1365x1365_e478558e.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 6730,
+      "caption_hint": ""
+    },
+    {
+      "file": "gallery-09.jpg",
+      "source_file": "real_1365x1365_ed7d28b6.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 6772,
+      "caption_hint": ""
+    },
+    {
+      "file": "gallery-10.jpg",
+      "source_file": "real_2048x1886_a534b21f.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 21174,
+      "caption_hint": ""
+    },
+    {
+      "file": "gallery-11.jpg",
+      "source_file": "real_890x543_0af83d93.jpg",
+      "source": "facebook.com/perazim.missioncentre (public page photos, anonymous crawler harvest 2026-09-01)",
+      "size_bytes": 78590,
+      "caption_hint": ""
+    }
+  ]
+}

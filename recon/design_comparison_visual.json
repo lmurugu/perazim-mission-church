@@ -1,0 +1,14 @@
+{
+  "status": "FAILED_AFTER_RETRY",
+  "attempt": 2,
+  "reason": "design_mcp generate_social_asset timed out after 300s with correct server path (/home/murugu/design_mcp.py). Image generation service (Pollinations AI) either queued, rate-limited, or unresponsive on anonymous tier.",
+  "honest_use_note": "This is a REAL failure, not fabricated. No comparison image exists. The design comparison report (recon/v5_comparison_report.md) relies ONLY on Prometheus recon (real text data) + verified HTML. This meta file records the failure explicitly to prevent any fabricated-visual claim.",
+  "comparison_relies_on": [
+    "prometheus_scrape_v5.json (vous 101K, passion 129K, mariners 200K, elevation TIMEOUT)",
+    "/home/murugu/perazim-site/index.html (verified 12144 bytes, 4 feature-match counts)",
+    "recon/v5_comparison_report.md (11.5KB, real evidence only)"
+  ],
+  "generated_at": "2026-09-11T12:07:33Z",
+  "no_fabricated_results": true,
+  "action_required_for_user": "If a design-standard comparison image is required, either (a) set POLLINATIONS_API_KEY and retry, or (b) open the reference sites directly in a browser and compare visually."
+}

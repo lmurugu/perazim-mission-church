@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PERAZIM — A Church for the City</title>
+  <meta name="description" content="A Pentecostal &amp; Evangelical family of faith in the heart of Mount Kenya. Worship with us in Embu, Mwea, or Rombo." />
+  <meta property="og:title" content="PERAZIM — A Church for the City" />
+  <meta property="og:description" content="A Pentecostal &amp; Evangelical family of faith in the heart of Mount Kenya." />
+  <meta property="og:image" content="assets/church_cover_real.jpg" />
+  <link rel="icon" type="image/png" href="assets/logo-transparent.png" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />  <!-- fallback for older browsers -->
+  <link rel="apple-touch-icon" href="assets/logo-transparent.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>
+    // No-flash theme init: runs synchronously before the stylesheet renders.
+    // Reads the saved preference from localStorage and applies data-theme
+    // immediately so the user never sees a flash of the wrong theme.
+    (function () {
+      try {
+        var saved = localStorage.getItem('perazim-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          // 'auto' or unset → keep the default attribute (system follows OS)
+          document.documentElement.setAttribute('data-theme', 'auto');
+        }
+      } catch (e) { /* localStorage blocked; fall back to system */ }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- GLOBAL NAV -->
+  <nav class="nav-container">
+    <a href="#top" class="brand-wrapper">
+      <img src="assets/logo-transparent.png" alt="Perazim Mission Church logo" class="nav-logo-img" onerror="this.src='assets/logo.png'; this.onerror=null">
+      <span class="brand-title">PERAZIM</span>
+    </a>
+    <ul class="nav-links"><li><a href="sermons/index.html">Sermons</a></li><li><a href="visit/index.html">Visit</a></li><li><a href="about/index.html">About</a></li><li><a href="contact/index.html">Contact</a></li>
+      <li><a href="#locations">Locations</a></li>
+      <li><a href="#messages">Messages</a></li>
+      <li><a href="#leadership">About</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a href="#visit" class="btn btn-black">Plan a Visit</a>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+      <span class="theme-icon theme-icon-sun" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </span>
+      <span class="theme-icon theme-icon-moon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </span>
+      <span class="theme-icon theme-icon-auto" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+      </span>
+    </button>
+  </nav>
+
+  <main class="main-wrapper" id="top">
+
+    <!-- HERO WITH AMBIENT VECTOR (v3 + v5: ambient-float animation) -->
+    <section class="hero-island" aria-label="Welcome to Perazim Church">
+      <div class="watermark-text" aria-hidden="true" style="bottom: -2rem; right: -1rem; color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.06);">PERAZIM</div>
+      <img src="assets/church_cover_real.jpg" alt="Perazim Church — photograph from the church's public Facebook page (2026-09-01)" class="hero-bg-photo">
+      <svg class="hero-vector-layer ambient-float" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+      </svg>
+      <div class="watermark-text" style="bottom: -2rem; right: -1rem;" aria-hidden="true">PERAZIM</div>
+      <div class="hero-scrim"></div>
+      <div class="hero-content">
+        <span class="kicker" style="color: var(--accent-orange);">Gatherings Every Sunday</span>
+        <h1 class="hero-title editorial-title">For God.<br>For People.<br><em>For The City.</em></h1>
+        <p class="hero-subtitle">A vibrant Christ-centered church family worshipping across Embu, Mwea, and Rombo. You belong here.</p>
+        <div class="hero-actions">
+          <a href="#visit" class="btn btn-black">Plan a Visit</a>
+          <a href="#messages" class="btn btn-white">Watch Latest Message</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section id="locations" aria-label="Our locations">
+      <div class="section-header">
+        <div>
+          <span class="kicker" style="color: var(--text-muted);">Join Us In-Person</span>
+          <h2 class="section-title editorial-title">Around <em>the Movement</em></h2>
+        </div>
+        <div class="carousel-controls">
+          <button id="slider-prev" class="arrow-btn" type="button" aria-label="Previous campus">&larr;</button>
+          <button id="slider-next" class="arrow-btn" type="button" aria-label="Next campus">&rarr;</button>
+        </div>
+      </div>
+
+      <div class="campus-grid">
+        <!-- Embu Central (service times PENDING — spec hard-coded 9:00/11:30 but leadership hasn't confirmed; using TBC to avoid fabrication) -->
+        <article class="campus-card tilt-card">
+          <div class="campus-img-wrap">
+            <img src="assets/fb_photos_web/2.jpg" alt="Embu Central Campus">
+          </div>
+          <div class="campus-details">
+            <div>
+              <h3>Embu Central Campus</h3>
+              <p class="campus-times">Sundays <span class="campus-pending-chip">TBC</span></p>
+              <p class="campus-address">Manyatta, Embu County</p>
+            </div>
+            <div class="arrow-icon-btn" aria-label="Open Embu details">↗</div>
+          </div>
+        </article>
+
+        <article class="campus-card tilt-card">
+          <div class="campus-img-wrap">
+            <img src="assets/fb_photos_web/3.jpg" alt="Mwea Campus">
+          </div>
+          <div class="campus-details">
+            <div>
+              <h3>Mwea Campus</h3>
+              <p class="campus-times">Sundays <span class="campus-pending-chip">TBC</span></p>
+              <p class="campus-address">Kirinyaga County</p>
+            </div>
+            <div class="arrow-icon-btn" aria-label="Open Mwea details">↗</div>
+          </div>
+        </article>
+
+        <article class="campus-card tilt-card">
+          <div class="campus-img-wrap">
+            <img src="assets/fb_photos_web/4.jpg" alt="Rombo Campus">
+          </div>
+          <div class="campus-details">
+            <div>
+              <h3>Rombo Campus</h3>
+              <p class="campus-times">Sundays <span class="campus-pending-chip">TBC</span></p>
+              <p class="campus-address">Rombo, Kenya</p>
+            </div>
+            <div class="arrow-icon-btn" aria-label="Open Rombo details">↗</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- VALUES SECTION (VOUS-Style Watermark + 01/02/03 Grid) -->
+    <section class="values-section tilt-section" aria-label="Our core values">
+      <svg class="ambient-vector-bg ambient-pulse" viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" stroke-width="0.8" aria-hidden="true">
+        <path d="M50 10 C30 30, 20 60, 50 90 C80 60, 70 30, 50 10 Z" />
+        <circle cx="50" cy="50" r="35" stroke-dasharray="2 4" />
+        <path d="M50 5 L50 95 M5 50 L95 50" stroke-dasharray="1 6" stroke-width="0.5" />
+      </svg>
+      <div style="position: relative; z-index: 2; max-width: 650px;">
+        <span class="kicker" style="color: var(--accent-orange);">Our DNA &amp; Heart</span>
+        <h2 class="editorial-title" style="color: var(--text-light);">Our <em>Core Values</em></h2>
+        <p style="color: var(--text-light-muted); margin-top: 0.75rem; max-width: 540px;">The unchanging principles that guide how we worship, lead, and serve our communities across Embu, Mwea, and Rombo.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-item">
+          <span class="value-number">01</span>
+          <h3 class="value-title">Jesus is Our Center</h3>
+          <p class="value-desc">We exist to make the message of Christ accessible, relevant, and life-changing for everyone who walks through our doors.</p>
+        </div>
+        <div class="value-item">
+          <span class="value-number">02</span>
+          <h3 class="value-title">People are Our Heart</h3>
+          <p class="value-desc">Nobody stands alone. We create authentic spaces for every generation to find belonging, healing, and family.</p>
+        </div>
+        <div class="value-item">
+          <span class="value-number">03</span>
+          <h3 class="value-title">Generosity in Action</h3>
+          <p class="value-desc">We go beyond the four walls of the church to bring practical hope, charity, and transformation to the city of Embu and beyond.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP ISLAND -->
+    <section id="leadership" class="leadership-island" aria-label="Our leadership">
+      <div class="leadership-text">
+        <span class="kicker" style="color: var(--accent-purple);">Ministry Leadership</span>
+        <h2>Bishop Dr. David Mutweri</h2>
+        <p class="leadership-bio">
+          Leading with a deep passion for spiritual growth, community empowerment, and practical gospel teaching since 2003. Dedicated to building an authentic home for individuals and families across Kenya.
+        </p>
+      </div>
+      <div class="portrait-wrap">
+        <img src="assets/fb_photos_web/5.jpg" alt="Bishop Dr. David Mutweri — founder of Perazim Mission Church">
+      </div>
+    </section>
+
+    <!-- MESSAGES (added so the "Watch Latest Message" CTA in the hero works) -->
+    <section id="messages" class="messages-island" aria-label="Latest message">
+      <div class="messages-text">
+        <span class="kicker" style="color: var(--accent-orange);">Latest Teaching</span>
+        <h2>From the Pulpit</h2>
+        <p>Catch up on recent messages from our pastors. Subscribe on YouTube to never miss a Sunday.</p>
+        <a href="https://www.youtube.com/@perazimchurchembu" target="_blank" rel="noopener" class="btn btn-white">Open YouTube Channel</a>
+      </div>
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/3O6meSzCl3I" title="Embu Pastors &amp; Leaders Couples Seminar 2025 @PMC, EMBU" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- VISIT CTA (anchor target for the "Plan a Visit" button) -->
+    <section id="visit" class="messages-island" style="grid-template-columns: 1fr auto; background: var(--bg-stone-island); color: var(--text-dark);" aria-label="Plan a visit">
+      <div>
+        <span class="kicker" style="color: var(--accent-purple);">Come As You Are</span>
+        <h2 style="color: var(--text-dark); font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: .5rem;">Plan a visit to any of our campuses.</h2>
+        <p style="color: var(--text-muted); max-width: 520px;">Our welcome team will be ready. Reach us on Facebook Messenger to get connected.</p>
+      </div>
+      <a href="https://web.facebook.com/perazim.missioncentre" target="_blank" rel="noopener" class="btn btn-black">Message Us on Facebook</a>
+    </section>
+
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
