@@ -1,8 +1,8 @@
 # Perazim Mission Church — Official Website
 
-[![Status](https://img.shields.io/badge/status-production--ready-success.svg)](https://github.com/)
+[![Status](https://img.shields.io/badge/status-production--ready-success.svg)](https://github.com/lmurugu/perazim-mission-church)
 [![Tests](https://img.shields.io/badge/verification-86%2F86%20passing-brightgreen.svg)](recon/verify_v5upgrade.py)
-[![Design Standard](https://img.shields.io/badge/design-VOUS%20%7C%20Passion%20City%20Standard-blueviolet.svg)](#design-system)
+[![Design Standard](https://img.shields.io/badge/design-VOUS%20%7C%20Passion%20City%20Standard-blueviolet.svg)](#design-system--visual-standard)
 [![Data Policy](https://img.shields.io/badge/data%20integrity-zero%20fabrication-blue.svg)](#data-integrity-policy)
 
 The official web platform for **Perazim Mission Church (PMC)**, headquartered in Embu, Kenya under the spiritual leadership of Bishop Dr. David Mutweri. 
@@ -15,6 +15,7 @@ Built with an editorial aesthetic influenced by premier global church platforms 
 
 - [Site Architecture](#site-architecture)
 - [Design System & Visual Standard](#design-system--visual-standard)
+- [Trending Features & Content Strategy (September 2026)](#trending-features--content-strategy-september-2026)
 - [Data Integrity Policy](#data-integrity-policy)
 - [Directory Structure](#directory-structure)
 - [Automated Verification & Quality Gates](#automated-verification--quality-gates)
@@ -36,6 +37,10 @@ The project is structured as a multi-page web application optimized for fast sta
 | `/visit/` | **Plan a Visit** | Guest registration funnel, campus directions, service guidelines | Real Embu location coordinates, honest PENDING schedule flags |
 | `/about/` | **About PMC** | History, vision, episcopal leadership, and regional assemblies | Bishop Dr. David Mutweri biography & branch directory |
 | `/contact/` | **Contact Channels** | Community communication links, prayer requests, social channels | Official Facebook page, YouTube channel, direct inquiry form |
+| `/hymns/` | **Hymns Library** | Public domain hymnbook with lyrics & traditional translations | Classical hymns & verified seminar recordings |
+| `/riddles/` | **Faith Riddles** | Family & youth biblical trivia and engagement questions | Scripture-backed study notes |
+| `/jokes/` | **Christian Humor** | Wholesome, uplifting fellowship stories and clean wit | Community-curated clean humor |
+| `/news/` | **Ministry News** | Community outreach updates, regional conferences, mission digests | Embu headquarters & regional branch announcements |
 
 ---
 
@@ -75,6 +80,24 @@ The project is structured as a multi-page web application optimized for fast sta
 
 ---
 
+## Trending Features & Content Strategy (September 2026)
+
+### 1. High-Impact Interactive Features
+- **"Sunday Stream & Interactive Worship" Dynamic Banner**: Time-aware hero banner that shifts state on Sunday mornings (e.g., 9:00 AM – 1:00 PM EAT) to display a bold "Service is Live Now" player, falling back to recent seminar highlights during weekdays.
+- **Daily Scripture & Audio Manna Widget**: Daily verse card paired with a 60-second audio devotional snippet from Bishop Dr. David Mutweri with 1-click WhatsApp/Facebook sharing.
+- **Interactive Prayer Wall & Testimony Board**: Moderated community board with an encouraging "🙏 I Prayed for This" counter.
+- **Fast "Plan Your Visit" WhatsApp Concierge**: Floating action pill button pre-filled for first-time guests connecting directly to church hospitality (WhatsApp is Kenya's #1 channel).
+- **Offline PWA Caching**: Lightweight service worker caching hymns, prayer declarations, and audio for low-connectivity environments.
+
+### 2. Curated License-Free Content Pillars
+- **Consistent Visual Aesthetic**: Warm natural textures (wood, linen, earth tones), golden-hour sunlight, and genuine acoustic worship. Real church photography blended with CC0 royalty-free imagery.
+- **Public Domain Hymns**: Classical pre-1928 hymns (*Amazing Grace*, *Great Is Thy Faithfulness*, *It Is Well With My Soul*, *Blessed Assurance*, and traditional Swahili translations like *Mwathani Mwega*).
+- **Biblical Riddles & Trivia**: Clean, family-friendly questions driving organic dwell time and youth engagement.
+- **Wholesome Christian Humor**: Relatable, clean church wit and fellowship moments.
+- **Uplifting Ministry News**: 2-minute digests covering community outreach in Embu, regional leaders' conferences, and uplifting faith milestones.
+
+---
+
 ## Data Integrity Policy
 
 This project strictly enforces **Zero-Fabrication Standards**:
@@ -97,6 +120,14 @@ perazim-site/
 │   └── index.html               # Plan a Visit Page
 ├── contact/
 │   └── index.html               # Contact & Inquiries Page
+├── hymns/
+│   └── index.html               # Public Domain Hymnbook Archive
+├── riddles/
+│   └── index.html               # Bible Riddles & Faith Trivia
+├── jokes/
+│   └── index.html               # Wholesome Christian Humor
+├── news/
+│   └── index.html               # Inspiring Ministry News & Announcements
 ├── assets/
 │   ├── styles.css               # Core CSS Design Engine & Motion Rules
 │   ├── app.js                   # Navigation, Theme Engine, Parallax & Observers
@@ -130,15 +161,6 @@ The codebase includes an automated audit suite verifying 86 distinct structural,
 python3 recon/verify_v5upgrade.py
 ```
 
-### Verification Highlights:
-- [x] Ambient float & glow keyframe animations defined
-- [x] Scroll reveal with stagger multipliers (1-4)
-- [x] Blurred dynamic header padding on scroll
-- [x] 3-state dark mode toggle with storage synchronization
-- [x] Zero-flash hydration script in `<head>`
-- [x] Authentic image paths & zero placeholder stock URLs
-- [x] 100% compliance across all 86 test criteria
-
 ---
 
 ## Local Development & Preview
@@ -164,11 +186,6 @@ Visit [`http://localhost:8090`](http://localhost:8090) in your browser.
 2. In your repository settings, navigate to **Pages**.
 3. Under **Source**, select **Deploy from a branch** and set `Branch: main`, `Folder: / (root)`.
 4. Save. Your site will be live within seconds.
-
-### Cloudflare Pages / Vercel / Netlify
-- **Framework Preset**: None (Static HTML/CSS/JS)
-- **Build Command**: *(None required)*
-- **Output Directory**: `.` (Root)
 
 ---
 
