@@ -151,7 +151,22 @@ def html_announcements(items):
     ]
 
 
+def html_campuses(items):
+    out = []
+    for c in items:
+        times = esc(c["service_times"]) if c["service_times"] else '<span class="campus-pending-chip">TBC</span>'
+        out.append(
+            f'<article class="campus-card campus-featured tilt-card"><div class="campus-img-wrap">'
+            f'<img src="{esc(c["photo"])}" alt="{esc(c["name"])}"></div><div class="campus-details"><div>'
+            f'<span class="kicker">Main campus</span><h3>{esc(c["name"])}</h3>'
+            f'<p class="campus-times">Sundays {times}</p><p class="campus-address">{esc(c["area"])}</p></div>'
+            f'<a class="arrow-icon-btn" href="visit/index.html" aria-label="Plan a visit to {esc(c["name"])}">↗</a></div></article>'
+        )
+    return out
+
+
 HTML_RENDERERS = {
+    "campuses": html_campuses,
     "sermons": html_sermons,
     "hymns": html_hymns,
     "riddles": html_riddles,

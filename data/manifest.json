@@ -39,7 +39,7 @@
     "campuses": {
       "json": "data/campuses.json",
       "csv": "data/csv/campuses.csv",
-      "count": 3
+      "count": 1
     },
     "config": {
       "json": "data/config.json",

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PERAZIM — A Church for the City</title>
-  <meta name="description" content="A Pentecostal &amp; Evangelical family of faith in the heart of Mount Kenya. Worship with us in Embu, Mwea, or Rombo." />
+  <meta name="description" content="A Pentecostal &amp; Evangelical family of faith in the heart of Mount Kenya. Worship with us in Embu." />
   <meta property="og:title" content="PERAZIM — A Church for the City" />
   <meta property="og:description" content="A Pentecostal &amp; Evangelical family of faith in the heart of Mount Kenya." />
   <meta property="og:image" content="assets/church_cover_real.jpg" />
@@ -39,7 +39,7 @@
       <span class="brand-title">PERAZIM</span>
     </a>
     <ul class="nav-links"><li><a href="sermons/index.html">Sermons</a></li><li><a href="visit/index.html">Visit</a></li><li><a href="about/index.html">About</a></li><li><a href="contact/index.html">Contact</a></li>
-      <li><a href="#locations">Locations</a></li>
+      <li><a href="#locations">Location</a></li>
       <li><a href="#messages">Messages</a></li>
       <li><a href="#leadership">About</a></li>
       <li><a href="#visit">Visit</a></li>
@@ -72,7 +72,7 @@
       <div class="hero-content">
         <span class="kicker" style="color: var(--accent-orange);">Gatherings Every Sunday</span>
         <h1 class="hero-title editorial-title">For God.<br>For People.<br><em>For The City.</em></h1>
-        <p class="hero-subtitle">A vibrant Christ-centered church family worshipping across Embu, Mwea, and Rombo. You belong here.</p>
+        <p class="hero-subtitle">A vibrant Christ-centered church family worshipping together in Embu. You belong here.</p>
         <div class="hero-actions">
           <a href="#visit" class="btn btn-black">Plan a Visit</a>
           <a href="#messages" class="btn btn-white">Watch Latest Message</a>
@@ -80,62 +80,19 @@
       </div>
     </section>
 
-    <!-- LOCATIONS -->
-    <section id="locations" aria-label="Our locations">
+    <!-- LOCATION: one featured campus, from data/csv/campuses.csv -->
+    <section id="locations" aria-label="Our main campus">
       <div class="section-header">
         <div>
           <span class="kicker" style="color: var(--text-muted);">Join Us In-Person</span>
-          <h2 class="section-title editorial-title">Around <em>the Movement</em></h2>
-        </div>
-        <div class="carousel-controls">
-          <button id="slider-prev" class="arrow-btn" type="button" aria-label="Previous campus">&larr;</button>
-          <button id="slider-next" class="arrow-btn" type="button" aria-label="Next campus">&rarr;</button>
+          <h2 class="section-title editorial-title">Worship <em>with Us</em></h2>
         </div>
       </div>
 
-      <div class="campus-grid">
-        <!-- Embu Central (service times PENDING — spec hard-coded 9:00/11:30 but leadership hasn't confirmed; using TBC to avoid fabrication) -->
-        <article class="campus-card tilt-card">
-          <div class="campus-img-wrap">
-            <img src="assets/fb_photos_web/2.jpg" alt="Embu Central Campus">
-          </div>
-          <div class="campus-details">
-            <div>
-              <h3>Embu Central Campus</h3>
-              <p class="campus-times">Sundays <span class="campus-pending-chip">TBC</span></p>
-              <p class="campus-address">Manyatta, Embu County</p>
-            </div>
-            <div class="arrow-icon-btn" aria-label="Open Embu details">↗</div>
-          </div>
-        </article>
-
-        <article class="campus-card tilt-card">
-          <div class="campus-img-wrap">
-            <img src="assets/fb_photos_web/3.jpg" alt="Mwea Campus">
-          </div>
-          <div class="campus-details">
-            <div>
-              <h3>Mwea Campus</h3>
-              <p class="campus-times">Sundays <span class="campus-pending-chip">TBC</span></p>
-              <p class="campus-address">Kirinyaga County</p>
-            </div>
-            <div class="arrow-icon-btn" aria-label="Open Mwea details">↗</div>
-          </div>
-        </article>
-
-        <article class="campus-card tilt-card">
-          <div class="campus-img-wrap">
-            <img src="assets/fb_photos_web/4.jpg" alt="Rombo Campus">
-          </div>
-          <div class="campus-details">
-            <div>
-              <h3>Rombo Campus</h3>
-              <p class="campus-times">Sundays <span class="campus-pending-chip">TBC</span></p>
-              <p class="campus-address">Rombo, Kenya</p>
-            </div>
-            <div class="arrow-icon-btn" aria-label="Open Rombo details">↗</div>
-          </div>
-        </article>
+      <div class="campus-featured-wrap">
+<!-- feed:campuses -->
+<article class="campus-card campus-featured tilt-card"><div class="campus-img-wrap"><img src="assets/fb_photos_web/2.jpg" alt="Embu Central Campus"></div><div class="campus-details"><div><span class="kicker">Main campus</span><h3>Embu Central Campus</h3><p class="campus-times">Sundays <span class="campus-pending-chip">TBC</span></p><p class="campus-address">Manyatta, Embu County</p></div><a class="arrow-icon-btn" href="visit/index.html" aria-label="Plan a visit to Embu Central Campus">↗</a></div></article>
+<!-- /feed:campuses -->
       </div>
     </section>
 
@@ -149,7 +106,7 @@
       <div style="position: relative; z-index: 2; max-width: 650px;">
         <span class="kicker" style="color: var(--accent-orange);">Our DNA &amp; Heart</span>
         <h2 class="editorial-title" style="color: var(--text-light);">Our <em>Core Values</em></h2>
-        <p style="color: var(--text-light-muted); margin-top: 0.75rem; max-width: 540px;">The unchanging principles that guide how we worship, lead, and serve our communities across Embu, Mwea, and Rombo.</p>
+        <p style="color: var(--text-light-muted); margin-top: 0.75rem; max-width: 540px;">The unchanging principles that guide how we worship, lead, and serve our community in Embu and beyond.</p>
       </div>
       <div class="values-grid">
         <div class="value-item">

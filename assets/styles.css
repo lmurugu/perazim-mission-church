@@ -1174,3 +1174,6 @@ h1, h2, h3, .font-display {
 .feed-section { max-width: 1100px; margin: 0 auto; padding: 3rem 1rem 4rem; color: var(--text-primary); }
 .feed-section .section-label { font-weight: 900; font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: .75rem; }
 .feed-section .feed-intro { color: var(--text-muted); }
+.campus-featured-wrap { display: grid; }
+.campus-featured { max-width: 720px; width: 100%; }
+.campus-featured .kicker { display: block; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent-purple); font-weight: 700; margin-bottom: .25rem; }

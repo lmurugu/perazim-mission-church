@@ -13,8 +13,11 @@ made here shows up everywhere.
 | `verses` | Verse of the day, one row per date | Web app, Android |
 | `events` | Services and gatherings | Web app, Android (website page to follow) |
 | `announcements` | Notices and bulletins | Web app, Android (website page to follow) |
-| `campuses` | Campus names and areas | Web app (website and Android to follow) |
+| `campuses` | The featured campus (Embu) | Website home page, web app |
 | `config` | Church contacts, giving details and app switches | Web app, Android |
+
+The exact column contract for every tab, for the Android project and anyone
+else who reads the feed, is in [`SCHEMA.md`](SCHEMA.md).
 
 ## How to change content
 
@@ -48,5 +51,5 @@ URLs with its existing sync code. `data/manifest.json` lists every tab.
   (`active=FALSE`) until a licence is confirmed.
 - Events and announcements are empty on purpose: the Android seed entries are
   sample data, not real church events.
-- Campuses follow the website (Embu Central, Mwea, Rombo). The Android server
-  and the web app list different campuses; these need confirming.
+- Campuses: only Embu Central Campus is listed. It is the church's one
+  featured campus, shown on the home page.
