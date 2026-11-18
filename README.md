@@ -30,17 +30,30 @@ Built with an editorial aesthetic influenced by premier global church platforms 
 
 The project is structured as a multi-page web application optimized for fast static delivery, zero framework overhead, and complete cross-device accessibility.
 
-| Route | Page | Purpose | Verified Assets |
-|---|---|---|---|
-| `/` | **Home** | Editorial landing page, hero island, core values, campus carousel, mission statement | Real cover photo, transparent vector mark, bishop portrait |
-| `/sermons/` | **Sermons Archive** | Curated catalog of messages, seminars, and teachings | Real YouTube embed (`3O6meSzCl3I`) & metadata |
-| `/visit/` | **Plan a Visit** | Guest registration funnel, campus directions, service guidelines | Real Embu location coordinates, honest PENDING schedule flags |
-| `/about/` | **About PMC** | History, vision, episcopal leadership, and regional assemblies | Bishop Dr. David Mutweri biography & branch directory |
-| `/contact/` | **Contact Channels** | Community communication links, prayer requests, social channels | Official Facebook page, YouTube channel, direct inquiry form |
-| `/hymns/` | **Hymns Library** | Public domain hymnbook with lyrics & traditional translations | Classical hymns & verified seminar recordings |
-| `/riddles/` | **Faith Riddles** | Family & youth biblical trivia and engagement questions | Scripture-backed study notes |
-| `/jokes/` | **Christian Humor** | Wholesome, uplifting fellowship stories and clean wit | Community-curated clean humor |
-| `/news/` | **Ministry News** | Community outreach updates, regional conferences, mission digests | Embu headquarters & regional branch announcements |
+| Route | Page | Purpose |
+|---|---|---|
+| `/` | **Home** | Welcome, featured campus, core values, leadership, latest message, family resources |
+| `/visit/` | **Plan a Visit** | When and where we meet, directions and map, what to expect |
+| `/about/` | **About** | Our name, mission, leadership and values |
+| `/sermons/` | **Sermons** | Messages from the shared feed, linked to YouTube |
+| `/give/` | **Give** | Ways to give (M-Pesa details go here once confirmed) |
+| `/contact/` | **Contact** | Facebook, YouTube and directions |
+| `/news/` | **News & events** | Announcements and events from the shared feed |
+| `/hymns/`, `/riddles/`, `/jokes/` | **Family resources** | Content from the shared feed |
+| `404.html` | **Not found** | Served by GitHub Pages for any missing path |
+
+Every page shares the same header (with a mobile menu and theme toggle) and
+footer. There is no template engine, so a change to the header or footer must
+be made on every page.
+
+The site's public address, `https://lmurugu.github.io/perazim-mission-church/`,
+is written into each page's canonical and share tags, `404.html`,
+`robots.txt` and `sitemap.xml`. Update those if the site moves to its own
+domain.
+
+Unconfirmed details (service times, phone, WhatsApp, email, M-Pesa paybill)
+are left off the pages. HTML comments mark where each one goes once the church
+confirms it.
 
 ---
 
@@ -141,7 +154,6 @@ perazim-site/
 │   ├── styles.css               # Core CSS Design Engine & Motion Rules
 │   ├── app.js                   # Navigation, Theme Engine, Parallax & Observers
 │   ├── sermons.json             # Verified Sermon Catalog
-│   ├── gallery_manifest.json    # Photo Gallery Metadata
 │   ├── bishop_real.jpg          # Verified Portrait of Bishop Dr. David Mutweri
 │   ├── church_cover_real.jpg    # Verified Church Building Cover Photo
 │   ├── logo-transparent.png     # Transparent Vector Logo Mark

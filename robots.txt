@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lmurugu.github.io/perazim-mission-church/sitemap.xml

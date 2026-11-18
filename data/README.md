@@ -11,8 +11,8 @@ made here shows up everywhere.
 | `riddles` | Bible riddles | Website `/riddles/`, web app, Android |
 | `jokes` | Clean Christian jokes | Website `/jokes/`, web app, Android |
 | `verses` | Verse of the day, one row per date | Web app, Android |
-| `events` | Services and gatherings | Web app, Android (website page to follow) |
-| `announcements` | Notices and bulletins | Web app, Android (website page to follow) |
+| `events` | Services and gatherings | Website `/news/`, web app, Android |
+| `announcements` | Notices and bulletins | Website `/news/`, web app, Android |
 | `campuses` | The featured campus (Embu) | Website home page, web app |
 | `config` | Church contacts, giving details and app switches | Web app, Android |
 

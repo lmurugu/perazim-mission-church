@@ -163,6 +163,12 @@
       '.leadership-island, .values-section, .value-item, ' +
       '.poster-card, .messages-island, .section-eyebrow-wrap'
     );
+    var viewportH = window.innerHeight || document.documentElement.clientHeight;
+    revealTargets = Array.prototype.filter.call(revealTargets, function (el) {
+      // Anything already on screen at load is shown straight away, so the
+      // first view (and link-preview screenshots) are never blank.
+      return el.getBoundingClientRect().top > viewportH * 0.85;
+    });
     revealTargets.forEach(function (el) {
       el.classList.add('reveal-on-scroll');
       if (el.classList.contains('campus-card') ||
@@ -191,6 +197,36 @@
       el.classList.add('is-revealed');
     });
   }
+
+  // ============================================================
+  // 8b. MOBILE MENU toggle (shown under 900px)
+  // ============================================================
+  var navToggle = document.querySelector('.nav-toggle');
+  var navBar = document.querySelector('.nav-container');
+  if (navToggle && navBar) {
+    function setMenu(open) {
+      navBar.classList.toggle('nav-open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    navToggle.addEventListener('click', function () {
+      setMenu(!navBar.classList.contains('nav-open'));
+    });
+    navBar.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navBar.classList.contains('nav-open')) {
+        setMenu(false);
+        navToggle.focus();
+      }
+    });
+  }
+
+  // Footer year
+  document.querySelectorAll('[data-year]').forEach(function (el) {
+    el.textContent = String(new Date().getFullYear());
+  });
 
   // ============================================================
   // 9. STICKY NAVBAR morph on scroll

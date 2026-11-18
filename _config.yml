@@ -1,0 +1,12 @@
+# GitHub Pages (Jekyll) settings.
+# Keep development notes and tooling off the public site. The data/ feed,
+# pages and assets are still published.
+exclude:
+  - recon/
+  - scripts/
+  - README.md
+  - ARCHITECTURE.md
+  - CONTRIBUTING.md
+  - AGENTS.md
+  - MEMORY.md
+  - LICENSE
