@@ -44,6 +44,15 @@ The project is structured as a multi-page web application optimized for fast sta
 
 ---
 
+## Shared Content Feed
+
+Sermons, hymns, riddles, jokes, verses, events, announcements, campuses and
+church contact details live in [`data/`](data/README.md). The website, the
+Perazim web app and the Android app all read that feed, so content is edited
+once. Edit `data/csv/*.csv`, then run `python3 scripts/build_data.py`.
+
+---
+
 ## Design System & Visual Standard
 
 ### 1. Typography Hierarchy

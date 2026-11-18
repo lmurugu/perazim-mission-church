@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "riddles": [
+    {
+      "id": "riddle_1",
+      "category": "MEDIUM",
+      "question": "I lived longer than any mortal man recorded in Scripture, yet I died before my father did. Who am I?",
+      "answer": "Methuselah",
+      "xp": 20,
+      "active": true
+    },
+    {
+      "id": "riddle_2",
+      "category": "HARD",
+      "question": "Out of the eater came something to eat; out of the strong came something sweet. What is this riddle and what is its answer?",
+      "answer": "A lion's carcass with honey inside",
+      "xp": 20,
+      "active": true
+    },
+    {
+      "id": "riddle_3",
+      "category": "EASY",
+      "question": "I had no earthly father, no earthly mother, and was never born as a baby; yet God fashioned me from the virgin soil of Eden. Who am I?",
+      "answer": "Adam",
+      "xp": 20,
+      "active": true
+    },
+    {
+      "id": "riddle_4",
+      "category": "EASY",
+      "question": "I was neither a prophet, priest, nor king, yet God opened my mouth to speak with a human voice to rebuke a wayward prophet who was blind to the Angel of the Lord. Who am I?",
+      "answer": "Balaam's Donkey",
+      "xp": 20,
+      "active": true
+    },
+    {
+      "id": "riddle_5",
+      "category": "EASY",
+      "question": "King David named a battlefield after me when God broke through his enemies like a rushing torrent of bursting waters. What is the name of this place of Great Breakthrough?",
+      "answer": "Baal-Perazim",
+      "xp": 20,
+      "active": true
+    },
+    {
+      "id": "riddle_6",
+      "category": "HARD",
+      "question": "I was King of Salem and priest of God Most High, without genealogy, without beginning of days or end of life, foreshadowing the eternal priesthood of Jesus Christ. Who am I?",
+      "answer": "Melchizedek",
+      "xp": 20,
+      "active": true
+    },
+    {
+      "id": "riddle_7",
+      "category": "EASY",
+      "question": "I was short in physical stature and despised as a tax collector, but I climbed a sycamore fig tree to catch a glimpse of Jesus in Jericho. Who am I?",
+      "answer": "Zacchaeus",
+      "xp": 20,
+      "active": true
+    },
+    {
+      "id": "riddle_8",
+      "category": "MEDIUM",
+      "question": "I offered only five barley loaves and two small fish from my lunch, yet in the hands of the Lord, my meal satisfied five thousand men with twelve baskets of leftovers. Who was I?",
+      "answer": "The Boy with the Loaves and Fish",
+      "xp": 20,
+      "active": true
+    }
+  ]
+}

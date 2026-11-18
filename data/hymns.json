@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "hymns": [
+    {
+      "id": "hymn_1",
+      "title": "Holy, Holy, Holy! Lord God Almighty",
+      "writer": "Reginald Heber",
+      "year": 1826,
+      "key": "D Major",
+      "bpm": 80,
+      "tags": "Worship",
+      "lyrics": "Verse 1:\nHoly, holy, holy! Lord God Almighty!\nEarly in the morning our song shall rise to Thee;\nHoly, holy, holy, merciful and mighty!\nGod in three Persons, blessed Trinity!\n\nVerse 2:\nHoly, holy, holy! All the saints adore Thee,\nCasting down their golden crowns around the glassy sea;\nCherubim and seraphim falling down before Thee,\nWhich wert, and art, and evermore shalt be.\n\nVerse 3:\nHoly, holy, holy! Though the darkness hide Thee,\nThough the eye of sinful man Thy glory may not see;\nOnly Thou art holy; there is none beside Thee,\nPerfect in power, in love, and purity.\n\nVerse 4:\nHoly, holy, holy! Lord God Almighty!\nAll Thy works shall praise Thy Name, in earth, and sky, and sea;\nHoly, holy, holy; merciful and mighty!\nGod in three Persons, blessed Trinity!",
+      "chords": "D - Bm - G - A - D - Bm - Em - A7 - D",
+      "active": true
+    },
+    {
+      "id": "hymn_3",
+      "title": "Amazing Grace (How Sweet the Sound)",
+      "writer": "John Newton",
+      "year": 1779,
+      "key": "G Major",
+      "bpm": 80,
+      "tags": "Grace",
+      "lyrics": "Verse 1:\nAmazing grace! How sweet the sound\nThat saved a wretch like me!\nI once was lost, but now am found;\nWas blind, but now I see.\n\nVerse 2:\n'Twas grace that taught my heart to fear,\nAnd grace my fears relieved;\nHow precious did that grace appear\nThe hour I first believed.\n\nVerse 3:\nThrough many dangers, toils and snares,\nI have already come;\n'Tis grace hath brought me safe thus far,\nAnd grace will lead me home.\n\nVerse 4:\nWhen we've been there ten thousand years,\nBright shining as the sun,\nWe've no less days to sing God's praise\nThan when we'd first begun.",
+      "chords": "G - G7 - C - G - Em - D - G",
+      "active": true
+    },
+    {
+      "id": "hymn_4",
+      "title": "To God Be the Glory",
+      "writer": "Fanny Crosby",
+      "year": 1875,
+      "key": "Ab Major",
+      "bpm": 80,
+      "tags": "Praise",
+      "lyrics": "Verse 1:\nTo God be the glory, great things He hath done;\nSo loved He the world that He gave us His Son,\nWho yielded His life an atonement for sin,\nAnd opened the life gate that all may go in.\n\nRefrain:\nPraise the Lord, praise the Lord, let the earth hear His voice!\nPraise the Lord, praise the Lord, let the people rejoice!\nO come to the Father, through Jesus the Son,\nAnd give Him the glory, great things He hath done.\n\nVerse 2:\nO perfect redemption, the purchase of blood,\nTo every believer the promise of God;\nThe vilest offender who truly believes,\nThat moment from Jesus a pardon receives.\n\nVerse 3:\nGreat things He hath taught us, great things He hath done,\nAnd great our rejoicing through Jesus the Son;\nBut purer, and higher, and greater will be\nOur wonder, our transport, when Jesus we see.",
+      "chords": "Ab - Db - Ab - Eb - Ab - Eb7 - Ab",
+      "active": true
+    },
+    {
+      "id": "hymn_6",
+      "title": "'Tis So Sweet to Trust in Jesus",
+      "writer": "Louisa M. R. Stead",
+      "year": 1882,
+      "key": "G Major",
+      "bpm": 80,
+      "tags": "Faith",
+      "lyrics": "Verse 1:\n'Tis so sweet to trust in Jesus,\nJust to take Him at His Word;\nJust to rest upon His promise,\nJust to know, \"Thus saith the Lord!\"\n\nRefrain:\nJesus, Jesus, how I trust Him!\nHow I've proved Him o'er and o'er!\nJesus, Jesus, precious Jesus!\nO for grace to trust Him more!\n\nVerse 2:\nO how sweet to trust in Jesus,\nJust to trust His cleansing blood;\nJust in simple faith to plunge me\n'Neath the healing, cleansing flood!\n\nVerse 3:\nYes, 'tis sweet to trust in Jesus,\nJust from sin and self to cease;\nJust from Jesus simply taking\nLife and rest, and joy and peace.\n\nVerse 4:\nI'm so glad I learned to trust Thee,\nPrecious Jesus, Savior, Friend;\nAnd I know that Thou art with me,\nWilt be with me to the end.",
+      "chords": "G - C - G - D - G - C - D - G",
+      "active": true
+    },
+    {
+      "id": "hymn_7",
+      "title": "Grace Greater Than Our Sin",
+      "writer": "Julia H. Johnston",
+      "year": 1911,
+      "key": "G Major",
+      "bpm": 80,
+      "tags": "Grace",
+      "lyrics": "Verse 1:\nMarvelous grace of our loving Lord,\nGrace that exceeds our sin and our guilt!\nYonder on Calvary's mount outpoured,\nThere where the blood of the Lamb was spilt.\n\nRefrain:\nGrace, grace, God's grace,\nGrace that will pardon and cleanse within;\nGrace, grace, God's grace,\nGrace that is greater than all our sin!\n\nVerse 2:\nSin and despair, like the sea waves cold,\nThreaten the soul with infinite loss;\nGrace that is greater, yes, grace untold,\nPoints to the refuge, the mighty cross.\n\nVerse 3:\nMarvelous, infinite, matchless grace,\nFreely bestowed on all who believe!\nYou that are longing to see His face,\nWill you this moment His grace receive?",
+      "chords": "G - D7 - G - C - G - D - G",
+      "active": true
+    },
+    {
+      "id": "hymn_8",
+      "title": "Blessed Assurance, Jesus Is Mine",
+      "writer": "Fanny Crosby",
+      "year": 1873,
+      "key": "D Major",
+      "bpm": 80,
+      "tags": "Praise",
+      "lyrics": "Verse 1:\nBlessed assurance, Jesus is mine!\nO what a foretaste of glory divine!\nHeir of salvation, purchase of God,\nBorn of His Spirit, washed in His blood.\n\nRefrain:\nThis is my story, this is my song,\nPraising my Savior all the day long;\nThis is my story, this is my song,\nPraising my Savior all the day long.\n\nVerse 2:\nPerfect submission, perfect delight,\nVisions of rapture now burst on my sight;\nAngels descending bring from above\nEchoes of mercy, whispers of love.\n\nVerse 3:\nPerfect submission, all is at rest;\nI in my Savior am happy and blest,\nWatching and waiting, looking above,\nFilled with His goodness, lost in His love.",
+      "chords": "D - G - D - A7 - D - G - A - D",
+      "active": true
+    },
+    {
+      "id": "hymn_9",
+      "title": "Rock of Ages, Cleft for Me",
+      "writer": "Augustus Toplady",
+      "year": 1763,
+      "key": "Bb Major",
+      "bpm": 80,
+      "tags": "Grace",
+      "lyrics": "Verse 1:\nRock of Ages, cleft for me,\nLet me hide myself in Thee;\nLet the water and the blood,\nFrom Thy wounded side which flowed,\nBe of sin the double cure,\nSave from wrath and make me pure.\n\nVerse 2:\nNot the labor of my hands\nCan fulfill Thy law's demands;\nCould my zeal no respite know,\nCould my tears forever flow,\nAll for sin could not atone;\nThou must save, and Thou alone.\n\nVerse 3:\nNothing in my hand I bring,\nSimply to the cross I cling;\nNaked, come to Thee for dress;\nHelpless, look to Thee for grace;\nFoul, I to the fountain fly;\nWash me, Savior, or I die.\n\nVerse 4:\nWhile I draw this fleeting breath,\nWhen mine eyes shall close in death,\nWhen I rise to worlds unknown,\nAnd behold Thee on Thy throne,\nRock of Ages, cleft for me,\nLet me hide myself in Thee.",
+      "chords": "Bb - Eb - Bb - F7 - Bb",
+      "active": true
+    },
+    {
+      "id": "hymn_10",
+      "title": "Praise to the Lord, the Almighty",
+      "writer": "Joachim Neander, tr. Catherine Winkworth",
+      "year": 1863,
+      "key": "G Major",
+      "bpm": 80,
+      "tags": "Praise",
+      "lyrics": "Verse 1:\nPraise to the Lord, the Almighty, the King of creation!\nO my soul, praise Him, for He is thy health and salvation!\nAll ye who hear, now to His temple draw near;\nJoin me in glad adoration.\n\nVerse 2:\nPraise to the Lord, who o'er all things so wondrously reigneth,\nShelters thee under His wings, yea, so gently sustaineth!\nHast thou not seen how thy desires e'er have been\nGranted in what He ordaineth?\n\nVerse 3:\nPraise to the Lord, who doth prosper thy work and defend thee;\nSurely His goodness and mercy here daily attend thee.\nPonder anew what the Almighty can do,\nIf with His love He befriend thee.\n\nVerse 4:\nPraise to the Lord, O let all that is in me adore Him!\nAll that hath life and breath, come now with praises before Him.\nLet the Amen sound from His people again,\nGladly for aye we adore Him.",
+      "chords": "G - C - D - Em - C - G - D - G",
+      "active": true
+    },
+    {
+      "id": "hymn_11",
+      "title": "Standing on the Promises of Christ My King",
+      "writer": "R. Kelso Carter",
+      "year": 1886,
+      "key": "Bb Major",
+      "bpm": 80,
+      "tags": "Faith",
+      "lyrics": "Verse 1:\nStanding on the promises of Christ my King,\nThrough eternal ages let His praises ring;\nGlory in the highest, I will shout and sing,\nStanding on the promises of God.\n\nRefrain:\nStanding, standing,\nStanding on the promises of God my Savior;\nStanding, standing,\nI'm standing on the promises of God.\n\nVerse 2:\nStanding on the promises that cannot fail,\nWhen the howling storms of doubt and fear assail,\nBy the living Word of God I shall prevail,\nStanding on the promises of God.\n\nVerse 3:\nStanding on the promises of Christ the Lord,\nBound to Him eternally by love's strong cord,\nOvercoming daily with the Spirit's sword,\nStanding on the promises of God.",
+      "chords": "Bb - Eb - Bb - F7 - Bb",
+      "active": true
+    },
+    {
+      "id": "hymn_12",
+      "title": "Crown Him with Many Crowns",
+      "writer": "Matthew Bridges",
+      "year": 1851,
+      "key": "D Major",
+      "bpm": 80,
+      "tags": "Worship",
+      "lyrics": "Verse 1:\nCrown Him with many crowns, the Lamb upon His throne;\nHark! how the heavenly anthem drowns all music but its own:\nAwake, my soul, and sing of Him who died for thee,\nAnd hail Him as thy matchless King through all eternity.\n\nVerse 2:\nCrown Him the Lord of love; behold His hands and side,\nRich wounds, yet visible above, in beauty glorified:\nNo angel in the sky can fully bear that sight,\nBut downward bends his burning eye at mysteries so bright.\n\nVerse 3:\nCrown Him the Lord of life, who triumphed o'er the grave,\nAnd rose victorious in the strife for those He came to save;\nHis glories now we sing who died, and rose on high,\nWho came eternal life to bring, and lives that death may die.",
+      "chords": "D - Bm - G - A - D - A7 - D",
+      "active": true
+    }
+  ]
+}

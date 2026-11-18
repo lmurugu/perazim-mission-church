@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "verses": [
+    {
+      "date": "2026-11-03",
+      "reference": "2 Samuel 5:20",
+      "text": "And David came to Baal-perazim, and David smote them there, and said, The LORD hath broken forth upon mine enemies before me, as the breach of waters."
+    },
+    {
+      "date": "2026-11-04",
+      "reference": "Isaiah 40:31",
+      "text": "But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."
+    },
+    {
+      "date": "2026-11-05",
+      "reference": "Philippians 4:13",
+      "text": "I can do all things through Christ which strengtheneth me."
+    },
+    {
+      "date": "2026-11-06",
+      "reference": "Jeremiah 29:11",
+      "text": "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end."
+    },
+    {
+      "date": "2026-11-07",
+      "reference": "Romans 8:28",
+      "text": "And we know that all things work together for good to them that love God, to them who are the called according to his purpose."
+    },
+    {
+      "date": "2026-11-08",
+      "reference": "Psalm 23:1",
+      "text": "The LORD is my shepherd; I shall not want."
+    },
+    {
+      "date": "2026-11-09",
+      "reference": "Proverbs 3:5-6",
+      "text": "Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."
+    }
+  ]
+}
