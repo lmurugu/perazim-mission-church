@@ -120,7 +120,7 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="ambient" aria-hidden="true"><span style="--x:5%;--y:620px;--d:0s">Grace</span><span style="--x:78%;--y:1500px;--d:-3s">Hope</span><span style="--x:12%;--y:2600px;--d:-5s">Faith</span><span style="--x:70%;--y:3400px;--d:-2s">Psalm 23</span><span style="--x:20%;--y:4300px;--d:-6s">Love</span><span style="--x:82%;--y:5000px;--d:-4s">Light</span></div>
   <header>
-  <nav class="nav-container" aria-label="Main">
+  <svg class="burger-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute"><defs><linearGradient id="burger-grad" gradientUnits="userSpaceOnUse" x1="4" y1="0" x2="20" y2="0"><stop offset="0" stop-color="#E17D2F"/><stop offset=".5" stop-color="#C0398F"/><stop offset="1" stop-color="#681A7D"/></linearGradient></defs></svg><nav class="nav-container" aria-label="Main">
     <a href="./" class="brand-wrapper" aria-label="Perazim Mission Church home">
       <img src="assets/logo-transparent.png" alt="" class="nav-logo-img" width="38" height="38">
       <span class="brand-title">PERAZIM</span>
@@ -143,24 +143,21 @@
   <main class="main-wrapper" id="main-content">
     <!-- chrome:hero -->
     <section class="home-hero" aria-labelledby="page-title">
-      <picture class="hero-art"><source srcset="assets/life/life-1.webp" type="image/webp"><img src="assets/life/life-1.jpg" alt="" width="1400" height="937" fetchpriority="high"></picture>
-      <div class="hero-glaze"></div>
       <div class="home-hero-inner">
-        <img class="home-logo" src="assets/logo-transparent.png" alt="Perazim Mission Church logo" width="230" height="230">
+        <img class="home-logo" src="assets/logo-transparent.png" alt="Perazim Mission Church logo" width="300" height="300" fetchpriority="high">
+        <p class="home-kicker">Sundays in Manyatta, Embu</p>
         <h1 id="page-title" class="home-title">For God. For People. <em>For the City.</em></h1>
         <p class="home-lead">A Christ-centred church family worshipping together in Manyatta, Embu. Come as you are. You belong here.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary cta-pulse" href="visit/">Plan a Visit</a>
-          <a class="btn btn-secondary" href="#messages">Watch the Latest Message</a>
+          <a class="btn btn-primary cta-pulse" href="visit/">Plan my visit</a>
+          <a class="btn btn-secondary" href="https://web.facebook.com/perazim.missioncentre" target="_blank" rel="noopener">Watch live on Facebook</a>
         </div>
-        <p class="home-times">Sundays in Manyatta, Embu &middot; Bible hour 9:00 AM &middot; Main service 10:00 AM</p>
       </div>
     </section>
     <!-- /chrome:hero -->
     <section class="page-section" id="paths" aria-labelledby="paths-title">
       <span class="kicker">Choose a path</span>
-      <h2 class="section-heading" id="paths-title">Where would you like to <em>start?</em></h2>
-      <p class="section-intro">Pick a picture to step inside. On a computer, hover to open one.</p>
+      <h2 class="section-heading" id="paths-title">Hover a picture, then <em>step inside</em></h2>
       <div class="paths">
         <a class="path" href="visit/" aria-label="Visit: Come as you are">
           <picture><source srcset="assets/heroes/prodigal-son.webp" type="image/webp"><img src="assets/heroes/prodigal-son.jpg" alt="Watercolor painting of a father running to welcome his returning son" width="1280" height="720" loading="lazy"></picture>
@@ -190,112 +187,62 @@
         <a class="path" href="contact/" aria-label="Contact: Knock, we will open">
           <picture><source srcset="assets/heroes/jesus-at-the-door.webp" type="image/webp"><img src="assets/heroes/jesus-at-the-door.jpg" alt="Watercolor painting of Jesus knocking at a glowing wooden door" width="1280" height="720" loading="lazy"></picture>
           <span class="path-scrim"></span><span class="path-tab" aria-hidden="true">Contact</span>
-          <span class="path-body"><span class="path-tag">Contact</span><span class="path-title">Knock, we will open</span><span class="path-text">Call or WhatsApp 0710 772 227.</span><span class="path-go">Open &rarr;</span></span>
+          <span class="path-body"><span class="path-tag">Contact</span><span class="path-title">Knock, we will open</span><span class="path-text">Call or WhatsApp +254 710 772 227.</span><span class="path-go">Open &rarr;</span></span>
         </a>
       </div>
     </section>
 
-
-    <section class="page-section" id="locations" aria-labelledby="locations-title">
-      <div class="section-header">
-        <div>
-          <span class="kicker">Join us in person</span>
-          <h2 class="section-title" id="locations-title">Worship <em>with Us</em></h2>
+    <section class="page-section" id="this-sunday" aria-labelledby="sunday-title">
+      <span class="kicker">This Sunday</span>
+      <h2 class="section-heading" id="sunday-title">Come as you are. <em>There is a seat for you.</em></h2>
+      <div class="home-sunday-grid">
+        <div class="tint tint-purple">
+          <p class="tint-label">Bible hour</p>
+          <p class="tint-time">9:00 &ndash; 10:00 AM</p>
+          <p>Open the Word together before the main service.</p>
         </div>
-      </div>
-      <div class="campus-featured-wrap">
-<!-- feed:campuses -->
-<article class="campus-card campus-featured"><div class="campus-img-wrap"><img src="assets/fb_photos_web/6.jpg" alt="A service at Embu Central Campus" width="160" height="160" loading="lazy"></div><div class="campus-details"><div><span class="kicker">Main campus</span><h3>Embu Central Campus</h3><p class="campus-times">Sundays: Bible hour 9:00 AM, main service 10:00 AM</p><p class="campus-address">Manyatta, Embu County</p></div><a class="arrow-icon-btn" href="visit/" aria-label="Plan a visit to Embu Central Campus">↗</a></div></article>
-<!-- /feed:campuses -->
-      </div>
-    </section>
-
-    <section class="page-section next-steps-home" aria-labelledby="next-title">
-      <span class="kicker">Your next step</span>
-      <h2 class="section-heading" id="next-title">New here? Start <em>here.</em></h2>
-      <p class="section-intro">Pick the step that fits where you are. Each one takes a minute, and you can reach us on WhatsApp.</p>
-      <div class="info-grid">
-        <a class="info-card" href="visit/"><h3>I'm new here</h3><p>Come on a Sunday. Bible hour starts at 9:00 AM and the main service at 10:00 AM.</p><span class="card-arrow">Plan my visit &rarr;</span></a>
-        <a class="info-card" href="https://wa.me/254710772227?text=Hello%2C%20I%20have%20decided%20to%20follow%20Jesus.%20I%20would%20like%20to%20talk%20with%20someone%20from%20Perazim." target="_blank" rel="noopener"><h3>I want to follow Jesus</h3><p>Tell us your decision. We'd love to pray with you and talk about what comes next.</p><span class="card-arrow">Message us &rarr;</span></a>
-        <a class="info-card" href="https://wa.me/254710772227?text=Hello%2C%20I%20would%20like%20to%20talk%20about%20baptism%20at%20Perazim." target="_blank" rel="noopener"><h3>I want to be baptised</h3><p>We baptise believers by full immersion in water. Let's talk it through when you're ready.</p><span class="card-arrow">Talk about baptism &rarr;</span></a>
-        <a class="info-card" href="https://wa.me/254710772227?text=Hello%2C%20I%20would%20like%20to%20request%20prayer." target="_blank" rel="noopener"><h3>I need prayer</h3><p>Send your request in private. We'd like to pray with you.</p><span class="card-arrow">Request prayer &rarr;</span></a>
-      </div>
-      <p class="section-intro" style="margin-top: 1.5rem;"><a href="next-steps/">See all next steps &rarr;</a></p>
-    </section>
-
-    <section class="values-section" aria-labelledby="values-title">
-      <div>
-        <span class="kicker">Our heart</span>
-        <h2 id="values-title">Our core values</h2>
-        <p>The principles that guide how we worship, lead and serve our community in Embu and beyond.</p>
-      </div>
-      <div class="values-grid">
-        <div class="value-item">
-          <span class="value-number" aria-hidden="true">01</span>
-          <h3 class="value-title">Jesus is Our Center</h3>
-          <p class="value-desc">We exist to make the message of Christ accessible, relevant, and life-changing for everyone who walks through our doors.</p>
+        <div class="tint tint-pink">
+          <p class="tint-label">Main service</p>
+          <p class="tint-time">10:00 AM &ndash; 1:00 PM</p>
+          <p>Worship in Swahili and English.</p>
         </div>
-        <div class="value-item">
-          <span class="value-number" aria-hidden="true">02</span>
-          <h3 class="value-title">People are Our Heart</h3>
-          <p class="value-desc">Nobody stands alone. We create authentic spaces for every generation to find belonging, healing, and family.</p>
+        <div class="tint tint-orange">
+          <p class="tint-label">Find us</p>
+          <p class="tint-time">Manyatta, Embu</p>
+          <p>Dress decent and mindful. <a href="https://www.google.com/maps/search/?api=1&amp;query=Manyatta%2C+Embu%2C+Kenya" target="_blank" rel="noopener">Get directions</a></p>
         </div>
-        <div class="value-item">
-          <span class="value-number" aria-hidden="true">03</span>
-          <h3 class="value-title">Generosity in Action</h3>
-          <p class="value-desc">We go beyond the four walls of the church to bring practical hope, charity, and transformation to the city of Embu and beyond.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="leadership" class="leadership-island" aria-labelledby="leadership-title">
-      <div class="leadership-text">
-        <span class="kicker">Our leadership</span>
-        <h2 id="leadership-title">Bishop Dr. David Mutweri</h2>
-        <p class="leadership-bio">Leading with a deep passion for spiritual growth, community empowerment, and practical gospel teaching since 2003. Dedicated to building an authentic home for individuals and families across Kenya.</p>
-        <a href="about/" class="btn btn-primary">About Perazim</a>
-      </div>
-      <div class="portrait-wrap">
-        <img src="assets/fb_photos_web/5.jpg" alt="Bishop Dr. David Mutweri, founder of Perazim Mission Church, on the steps of the sanctuary" width="720" height="720" loading="lazy">
-      </div>
-    </section>
-
-    <section id="messages" class="messages-island" aria-labelledby="messages-title">
-      <div class="messages-text">
-        <span class="kicker">Latest teaching</span>
-        <h2 id="messages-title">From the Pulpit</h2>
-        <p>Our services stream live on Facebook and YouTube. Our media team uploads each message, so you can catch up any time.</p>
-        <div class="cta-actions">
-          <a href="https://web.facebook.com/perazim.missioncentre" target="_blank" rel="noopener" class="btn btn-secondary">Watch live on Facebook</a>
-          <a href="https://www.youtube.com/@perazimchurchembu" target="_blank" rel="noopener" class="btn btn-secondary">Open YouTube Channel</a>
-          <a href="sermons/" class="btn btn-secondary">All Sermons</a>
-        </div>
-      </div>
-      <div class="video-frame">
-        <iframe src="https://www.youtube-nocookie.com/embed/3O6meSzCl3I" title="Embu Pastors &amp; Leaders Couples Seminar 2025 at PMC Embu" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section id="visit" class="cta-band" aria-labelledby="visit-title">
-      <div>
-        <span class="kicker">Come as you are</span>
-        <h2 id="visit-title">Plan your visit.</h2>
-        <p>Sundays: Bible hour at 9:00 AM and main service at 10:00 AM, in Manyatta, Embu. Call or WhatsApp us on 0710 772 227 and our welcome team will help you get connected.</p>
-      </div>
-      <div class="cta-actions">
-        <a href="visit/" class="btn btn-primary">Plan a Visit</a>
-        <a href="https://wa.me/254710772227" target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp Us</a>
       </div>
     </section>
 
     <section class="page-section" id="family" aria-labelledby="family-title">
-      <span class="kicker">For the whole family</span>
-      <h2 class="section-heading" id="family-title">Sing, think and smile together</h2>
-      <p class="section-intro">Resources our church family uses at home, in youth groups and in Sunday school.</p>
-      <div class="info-grid">
-        <a class="info-card" href="hymns/"><h3>Hymns</h3><p>Lyrics and chord charts for the hymns we sing on Sunday.</p><span class="card-arrow">Open hymns →</span></a>
-        <a class="info-card" href="riddles/"><h3>Bible riddles</h3><p>Questions from Scripture for families and youth. Tap to reveal the answer.</p><span class="card-arrow">Try a riddle →</span></a>
-        <a class="info-card" href="jokes/"><h3>Christian jokes</h3><p>Clean, light-hearted humour to share with the family.</p><span class="card-arrow">Read jokes →</span></a>
+      <div class="home-family">
+        <figure class="home-family-photo">
+          <img src="assets/bishop_real.jpg" alt="Bishop Dr David Mutweri" width="720" height="720" loading="lazy">
+        </figure>
+        <div class="home-glass">
+          <span class="kicker">Our church family</span>
+          <h2 class="section-heading" id="family-title">Led by Bishop Dr David Mutweri and <em>Rev. Margaret Mutweri</em></h2>
+          <p>Perazim Mission Church is a Pentecostal and Evangelical church family in Manyatta, Embu. Meet the people behind the church.</p>
+          <a class="btn btn-primary" href="about/">Our story</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="live-and-give" aria-labelledby="live-title">
+      <div class="home-live-grid">
+        <div class="home-glass">
+          <h2 class="section-title" id="live-title">Can&rsquo;t make it? <em>Join us live</em></h2>
+          <p>Watch the service on Facebook or YouTube.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://web.facebook.com/perazim.missioncentre" target="_blank" rel="noopener">Facebook</a>
+            <a class="btn btn-secondary" href="https://www.youtube.com/@perazimchurchembu" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+        <div class="tint tint-orange">
+          <h2 class="section-title" id="give-title">Give with <em>M-Pesa</em></h2>
+          <p>Paybill 4069983. Account: Tithes or Giving. Your giving supports the work of the church in Embu and beyond.</p>
+          <a class="btn btn-dark" href="give/">How to give</a>
+        </div>
       </div>
     </section>
   </main>
