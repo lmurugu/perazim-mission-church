@@ -245,4 +245,25 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll(); // initial state
   }
+  // Copy buttons (for example, the M-Pesa paybill number)
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var original = btn.textContent;
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      var done = function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = original; }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {});
+      } else {
+        var t = document.createElement('textarea');
+        t.value = text;
+        document.body.appendChild(t);
+        t.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        t.remove();
+      }
+    });
+  });
 })();

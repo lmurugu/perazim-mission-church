@@ -292,7 +292,7 @@ h1, h2, h3, .font-display {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.45;
+  opacity: 0.6;
   filter: contrast(1.1);
   z-index: 0;
 }
@@ -325,7 +325,7 @@ h1, h2, h3, .font-display {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.5) 40%, #0A0A0A 100%);
+  background: linear-gradient(180deg, rgba(10,10,10,0.05) 0%, rgba(10,10,10,0.35) 45%, rgba(10,10,10,0.92) 100%);
 }
 
 .hero-content {
@@ -1450,3 +1450,10 @@ a.info-card:hover { border-color: var(--accent-purple); transform: translateY(-3
 .mpesa-steps { padding-left: 1.2rem; display: grid; gap: 0.4rem; color: var(--text-muted); }
 .mpesa-steps strong { color: var(--text-primary); }
 .mpesa-number { font-size: 1.25rem; letter-spacing: 0.04em; }
+
+/* Round 2: first-visit questions, copy button */
+.faq-list { display: grid; gap: 0.75rem; max-width: 760px; }
+.faq-item { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 1rem 1.25rem; box-shadow: var(--shadow-card); }
+.faq-item summary { cursor: pointer; font-weight: 600; color: var(--text-primary); }
+.faq-item p { margin-top: 0.6rem; color: var(--text-muted); }
+.copy-btn { margin-left: 0.5rem; padding: 0.35rem 0.9rem; font-size: 0.85rem; vertical-align: middle; }
