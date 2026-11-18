@@ -156,6 +156,7 @@ ul, ol { padding-left: 1.2rem; }
   transition: top .2s ease;
 }
 .skip-link:focus { top: 1rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 
 /* Floating scripture words behind the page. */
 .ambient { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
@@ -375,6 +376,7 @@ a.info-card:hover, .info-card:hover, .campus-card:hover { transform: translateY(
 .card-purple a:not(.btn), .card-pink a:not(.btn) { color: #FFE3C8 !important; }
 .card-orange, .card-orange h3, .card-orange p, .card-orange li, .card-orange .info-strong { color: #2A0F33 !important; }
 .card-orange a:not(.btn) { color: #4B1260 !important; }
+.card-orange .btn-primary, .card-orange .btn-secondary { background: linear-gradient(135deg, #4B1260, #7A2C98); color: #FFFFFF; border-color: transparent; box-shadow: 0 8px 22px rgba(75, 18, 96, .35); }
 .card-purple .btn-secondary, .card-pink .btn-secondary { background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .6); color: #FFFFFF; }
 .card-purple .copy-btn, .card-pink .copy-btn { background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .6); color: #FFFFFF; }
 

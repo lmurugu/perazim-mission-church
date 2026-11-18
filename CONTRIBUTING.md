@@ -1,19 +1,22 @@
-# Contributing to Perazim Mission Church Web Platform
+# Contributing
 
-Thank you for contributing to the official web platform for Perazim Mission Church.
+1. **No invented facts.** Service times, names, ages, addresses and numbers must come from the
+   church. Unknowns stay as `CHURCH TO CONFIRM` comments, never as made-up text.
+2. **Real photos and paintings only** from `assets/`. No stock photos of people.
+3. **Use the design tokens** in `assets/styles.css`. No ad-hoc colours or inline styles.
+   Check contrast: dark text on light glass and orange, white only on deep purple or pink.
+4. **Type:** Plus Jakarta Sans for headings, Inter for text. Keep one `h1` per page and do not
+   skip heading levels.
+5. **Change shared parts in one place.** Titles, descriptions, hero, menu and footer are edited in
+   `scripts/sync_site.py`, then run `python3 scripts/sync_site.py`.
+6. **Test before you push:**
+   ```bash
+   python3 scripts/sync_site.py --check
+   python3 scripts/build_data.py --check
+   python3 scripts/check_site.py
+   python3 -m http.server 8123 &  node scripts/e2e_site.js   # needs Playwright
+   ```
 
-## Guidelines
+## Commit messages
 
-1. **Zero Fabrication**: Never introduce placeholder text, mock schedules, stock photos, or non-verified personnel. All photography must use authentic church assets from `assets/`.
-2. **Design Tokens**: Do not use ad-hoc hex colors or inline style overrides. Always reference CSS variables defined in `assets/styles.css`.
-3. **Typography**: Display titles must follow the `Plus Jakarta Sans` 900 + `Instrument Serif` italic pairing.
-4. **Testing**: Run `python3 recon/verify_v5upgrade.py` before committing. Ensure all 86 checks pass.
-
-## Commit Message Convention
-
-We follow Conventional Commits:
-- `feat: ...` for new user-facing features or pages.
-- `fix: ...` for bug fixes or layout repairs.
-- `style: ...` for visual adjustments without logical changes.
-- `docs: ...` for documentation updates.
-- `test: ...` for audit or test additions.
+Conventional Commits: `feat:`, `fix:`, `style:`, `docs:`, `test:`.
