@@ -91,7 +91,8 @@
     --campus-img-bg: #1F1F1F;
     --accent-purple: #9D4EDD;
     --accent-orange: #F09054;
-    }
+  }
+}
 
     /* --bg-deep is ALWAYS near-black — used for the values-section that must
      remain a visual "dark island" even in dark mode (it inverts to a different
