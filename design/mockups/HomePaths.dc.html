@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Perazim home, scene switcher</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap">
+<style>
+
+@keyframes riseIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes menuIn{from{opacity:0;transform:translateY(-10px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes linkIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+@keyframes kenburns{from{transform:scale(1.04)}to{transform:scale(1.14) translate(-1.5%,-1%)}}
+@keyframes plx{from{transform:translateY(-5%) scale(1.14)}to{transform:translateY(5%) scale(1.14)}}
+@keyframes fly{0%{transform:translate(-120px,0) scaleY(1)}25%{transform:translate(340px,-26px) scaleY(.7)}50%{transform:translate(820px,10px) scaleY(1)}75%{transform:translate(1180px,-30px) scaleY(.7)}100%{transform:translate(1500px,0) scaleY(1)}}
+@keyframes blobMove{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,-30px) scale(1.12)}}
+@keyframes glowBreath{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes ctaPulse{0%,100%{box-shadow:0 8px 24px rgba(225,125,47,.4)}50%{box-shadow:0 10px 40px rgba(243,160,90,.85),0 0 0 7px rgba(243,160,90,.20)}}
+@keyframes drift{0%{transform:translateY(0)}50%{transform:translateY(-14px)}100%{transform:translateY(0)}}
+body{margin:0;background:#FFFFFF;color:#2A0F33;font-family:Inter,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.92}
+.display{font-family:Fraunces,Georgia,serif;font-weight:700;letter-spacing:-.02em}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:blobMove 14s ease-in-out infinite alternate}
+.word{position:absolute;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:#681A7D;opacity:.13;pointer-events:none;animation:drift 9s ease-in-out infinite;white-space:nowrap}
+.dove{position:absolute;left:0;opacity:.9;pointer-events:none;animation:fly 24s linear infinite;filter:drop-shadow(0 4px 8px rgba(42,15,51,.35))}
+.navdark{background:rgba(42,15,51,.40);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.28);border-radius:26px;box-shadow:0 14px 40px rgba(0,0,0,.25);color:#FFFFFF;animation:riseIn .8s ease backwards}
+.burger{width:48px;height:48px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:linear-gradient(135deg,#4B1260,#7A2C98);color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 22px rgba(75,18,96,.40),0 0 22px rgba(190,100,230,.45);transition:transform .25s ease,box-shadow .25s ease}
+.burger:hover{transform:scale(1.08);box-shadow:0 10px 26px rgba(75,18,96,.5),0 0 34px rgba(190,100,230,.75)}
+.burger:focus-visible{outline:3px solid #E17D2F;outline-offset:3px}
+.menu-panel{position:absolute;top:calc(100% + 12px);right:0;z-index:60;min-width:290px;padding:12px;border-radius:24px;display:flex;flex-direction:column;gap:4px;background:linear-gradient(135deg,rgba(255,250,255,.97),rgba(242,218,242,.95));border:1px solid rgba(255,255,255,.9);box-shadow:0 28px 70px rgba(75,18,96,.40),0 0 40px rgba(190,100,230,.30);animation:menuIn .28s ease both}
+.menu-link{display:block;padding:14px 18px;border-radius:16px;font-size:17px;font-weight:600;color:#2A0F33;transition:background .2s ease,transform .2s ease;animation:linkIn .35s ease both}
+.menu-link:hover{background:rgba(104,26,125,.14);transform:translateX(5px)}
+.menu-link.active{background:linear-gradient(135deg,#F3A05A,#E17D2F);color:#2A0F33}
+.btn-orange{background:linear-gradient(135deg,#F3A05A,#E17D2F);color:#2A0F33;box-shadow:0 8px 24px rgba(225,125,47,.4);display:inline-block;transition:transform .25s ease,box-shadow .25s ease}
+.btn-orange:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 36px rgba(243,160,90,.75)}
+.btn-purple{background:linear-gradient(135deg,#4B1260,#7A2C98);color:#FFFFFF;box-shadow:0 8px 22px rgba(75,18,96,.35);display:inline-block;transition:transform .25s ease,box-shadow .25s ease}
+.btn-purple:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 34px rgba(122,44,152,.55)}
+.btn-line{border:1.5px solid rgba(255,255,255,.85);color:#FFFFFF;display:inline-block;transition:background .25s ease,transform .25s ease}
+.btn-line:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
+.glass{background:linear-gradient(135deg,rgba(255,255,255,.58) 0%,rgba(238,208,236,.55) 100%);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.7);box-shadow:0 20px 50px rgba(75,18,96,.20),inset 0 1px 0 rgba(255,255,255,.7);border-radius:26px;color:#2A0F33}
+.dglass{background:linear-gradient(135deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,.08) 100%);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.4);box-shadow:0 18px 44px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.4);border-radius:22px;color:#FFFFFF}
+.pop{color:#2A0F33;text-shadow:0 1px 0 rgba(255,255,255,.85),0 5px 12px rgba(75,18,96,.30),0 16px 36px rgba(75,18,96,.28)}
+.label{color:#4B1260;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+.card-purple,.card-pink,.card-orange{position:relative;border-radius:26px;-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(255,255,255,.45);transition:transform .3s ease}
+.card-purple{background:linear-gradient(135deg,rgba(58,13,77,.88),rgba(106,36,135,.80));box-shadow:0 22px 50px rgba(75,18,96,.35),inset 0 1px 0 rgba(255,255,255,.35);color:#FFFFFF}
+.card-pink{background:linear-gradient(135deg,rgba(150,22,90,.88),rgba(176,32,100,.82));box-shadow:0 22px 50px rgba(168,30,99,.32),inset 0 1px 0 rgba(255,255,255,.35);color:#FFFFFF}
+.card-orange{background:linear-gradient(135deg,rgba(247,178,122,.66),rgba(243,160,90,.54) 55%,rgba(245,154,138,.54));box-shadow:0 22px 50px rgba(225,125,47,.30),inset 0 1px 0 rgba(255,255,255,.5);color:#2A0F33}
+.card-purple::after,.card-pink::after,.card-orange::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;animation:glowBreath 4.5s ease-in-out infinite}
+.card-purple::after{box-shadow:0 0 46px 6px rgba(190,100,230,.60),inset 0 0 24px rgba(214,150,245,.28)}
+.card-pink::after{box-shadow:0 0 46px 6px rgba(244,96,160,.60),inset 0 0 24px rgba(255,170,205,.28)}
+.card-orange::after{box-shadow:0 0 46px 6px rgba(247,160,80,.70),inset 0 0 24px rgba(255,210,160,.40)}
+.card-purple:hover,.card-pink:hover,.card-orange:hover{transform:translateY(-8px)}
+@supports (animation-timeline:view()){
+.plx{animation:plx linear both;animation-timeline:view()}
+.rise{animation:riseIn linear both;animation-timeline:view();animation-range:entry 5% entry 60%}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+.kb{animation:kenburns 14s ease-in-out infinite alternate}
+</style>
+</helmet>
+<div style="position:relative;overflow:hidden;width:100%;max-width:1280px;margin:0 auto;background:#FFFFFF">
+<section style="position:relative;height:900px;overflow:hidden;background:#2A0F33">
+  <sc-for list="{{scenes}}" as="s" hint-placeholder-count="5">
+    <img class="{{s.imgClass}}" src="{{s.img}}" alt="{{s.alt}}" style="{{s.imgStyle}}">
+  </sc-for>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,15,51,.93) 0%,rgba(42,15,51,.80) 40%,rgba(42,15,51,.14) 78%,rgba(42,15,51,0) 100%)"></div>
+  <div style="position:absolute;left:0;right:0;bottom:0;height:260px;background:linear-gradient(0deg,rgba(42,15,51,.92),rgba(42,15,51,0))"></div>
+  <nav class="navdark" style="position:absolute;top:24px;left:48px;right:48px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 26px">
+  <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;text-shadow:0 2px 10px rgba(42,15,51,.6)"><img src="/_blob/92b478387a7ed8c2f11b997975e8212e" alt="" width="38" height="38" style="display:block">Perazim <span style="color:#F7C9A0">Mission Church</span></div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="FrostedVisit.dc.html" class="btn-orange" style="padding:12px 20px;border-radius:999px;font-weight:700">Plan my visit</a>
+    <button type="button" class="burger" aria-label="Menu" aria-haspopup="true" onClick="{{toggleMenu}}">
+      <sc-if value="{{menuClosed}}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></sc-if>
+      <sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></sc-if>
+    </button>
+  </div>
+  <sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+    <div class="menu-panel"><a class="menu-link active" href="Frosted.dc.html">Home</a><a class="menu-link" href="FrostedVisit.dc.html">Visit</a><a class="menu-link" href="FrostedSermons.dc.html">Sermons</a><a class="menu-link" href="FrostedMinistries.dc.html">Ministries</a><a class="menu-link" href="FrostedGive.dc.html">Give</a><a class="menu-link" href="FrostedAbout.dc.html">About</a><a class="menu-link" href="FrostedContact.dc.html">Contact</a></div>
+  </sc-if>
+</nav>
+
+  <div style="position:absolute;left:72px;top:200px;width:620px;display:grid;color:#FFFFFF">
+    <sc-for list="{{scenes}}" as="s" hint-placeholder-count="5">
+      <div style="{{s.textStyle}}">
+        <p style="margin:0 0 16px;font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F7C9A0">{{s.num}} · {{s.label}}</p>
+        <h1 class="display" style="margin:0 0 22px;font-size:104px;line-height:.96;text-shadow:0 6px 40px rgba(0,0,0,.5)">{{s.title}}</h1>
+        <p style="margin:0 0 30px;max-width:480px;font-size:19px;line-height:1.65;text-shadow:0 2px 12px rgba(0,0,0,.5)">{{s.text}}</p>
+        <a href="{{s.href}}" class="btn-orange" style="padding:17px 30px;border-radius:999px;font-weight:700">{{s.cta}}  →</a>
+      </div>
+    </sc-for>
+  </div>
+  <div style="position:absolute;left:72px;right:72px;bottom:44px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;z-index:5">
+    <p style="margin:0 18px 0 0;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#F7C9A0">Choose your path</p>
+    <sc-for list="{{scenes}}" as="t" hint-placeholder-count="5">
+      <button type="button" style="{{t.tabStyle}}" onClick="{{t.pick}}">{{t.label}}</button>
+    </sc-for>
+  </div>
+</section>
+<div style="position:relative;background:#FFFFFF;padding-bottom:56px">
+<div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden">
+  <div class="blob" style="left:-120px;top:940px;width:520px;height:460px;background:rgba(243,160,90,.38)"></div>
+  <div class="blob" style="right:-160px;top:1400px;width:560px;height:520px;background:rgba(104,26,125,.22)"></div>
+  <div class="blob" style="left:20%;top:1900px;width:620px;height:520px;background:rgba(247,170,205,.40)"></div>
+  <span class="word" style="left:6%;top:1020px;font-size:28px">Grace</span>
+  <span class="word" style="left:74%;top:1540px;font-size:24px;animation-delay:-3s">Psalm 23</span>
+  <span class="word" style="left:30%;top:2080px;font-size:28px;animation-delay:-5s">Love</span>
+</div>
+<div style="position:relative;z-index:1;padding:72px 48px 0">
+  <p class="label" style="margin:0 0 10px">This Sunday</p>
+  <h2 class="pop display" style="margin:0 0 28px;font-size:52px;line-height:1.05">Come as you are. There is a seat for you.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px">
+    <div class="card-purple" style="padding:30px;min-height:190px"><p style="margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F7C9A0">Bible hour</p><p style="margin:0 0 8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:800;text-shadow:0 2px 14px rgba(42,15,51,.5)">9:00 AM</p><p style="margin:0;font-size:15px;line-height:1.6">Open the Word together before the main service.</p></div>
+    <div class="card-pink" style="padding:30px;min-height:190px"><p style="margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#FFE3C8">Main service</p><p style="margin:0 0 8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:800;text-shadow:0 2px 14px rgba(42,15,51,.5)">10 AM – 1 PM</p><p style="margin:0;font-size:15px;line-height:1.6">Worship in Swahili and English.</p></div>
+    <div class="card-orange" style="padding:30px;min-height:190px"><p style="margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A2C0A">Find us</p><p style="margin:0 0 8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:800;text-shadow:0 1px 0 rgba(255,255,255,.55)">Manyatta, Embu</p><p style="margin:0;font-size:15px;line-height:1.6">Dress decent and mindful. Children welcome.</p></div>
+  </div>
+</div>
+<div class="rise" style="position:relative;z-index:1;margin:56px 48px 0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:stretch">
+  <div style="border-radius:28px;overflow:hidden;min-height:340px;box-shadow:0 24px 60px rgba(75,18,96,.30);border:6px solid rgba(255,255,255,.9)"><img src="/_blob/7a6130125b24d5be89a95deceb793022" alt="Bishop Dr David Mutweri" style="display:block;width:100%;height:100%;object-fit:cover"></div>
+  <div class="glass" style="padding:40px;display:flex;flex-direction:column;justify-content:center">
+    <p class="label" style="margin:0 0 10px">Our church family</p>
+    <h2 class="pop display" style="margin:0 0 14px;font-size:40px;line-height:1.1">Led by Bishop Dr David Mutweri and Rev. Margaret Mutweri</h2>
+    <p style="margin:0 0 22px;font-size:17px;line-height:1.65;color:#3A1B45">Perazim Mission Church is a Pentecostal and Evangelical church family in Manyatta, Embu. Meet the people behind the church.</p>
+    <a href="FrostedAbout.dc.html" class="btn-orange" style="align-self:flex-start;padding:15px 26px;border-radius:999px;font-weight:700">Our story</a>
+  </div>
+</div>
+<div class="rise" style="position:relative;z-index:1;margin:28px 48px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px">
+  <div class="glass" style="padding:30px"><h2 class="pop display" style="margin:0 0 10px;font-size:32px">Can't make it? Join us live</h2><p style="margin:0 0 18px;font-size:16px;line-height:1.6;color:#3A1B45">Watch the service on Facebook or YouTube.</p><div style="display:flex;flex-wrap:wrap;gap:12px"><a href="#" class="btn-purple" style="padding:12px 22px;border-radius:999px;font-weight:700">Facebook</a><a href="#" class="btn-purple" style="padding:12px 22px;border-radius:999px;font-weight:700">YouTube</a></div></div>
+  <div class="card-orange" style="padding:30px"><h2 class="display" style="margin:0 0 10px;font-size:32px;text-shadow:0 1px 0 rgba(255,255,255,.55)">Give with M-Pesa</h2><p style="margin:0 0 18px;font-size:16px;line-height:1.6">Paybill 4069983. Your giving supports the work of the church in Embu and beyond.</p><a href="FrostedGive.dc.html" class="btn-purple" style="padding:12px 22px;border-radius:999px;font-weight:700">How to give</a></div>
+</div>
+<footer class="glass" style="position:relative;z-index:1;margin:40px 48px 0;padding:28px 30px;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;font-size:15px;font-weight:500">
+  <div>Perazim Mission Church, Manyatta, Embu<br>Bishop Dr David Mutweri</div>
+  <div>+254 710 772 227 (WhatsApp)<br>info@perazimchurch.org · bishop@perazimchurch.org</div>
+</footer>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2560}}'>
+class Component extends DCLogic {
+componentDidMount() {
+this._timer = setInterval(() => {
+if (this._hold) return;
+const i = (this.state && this.state.idx) || 0;
+this.setState({ idx: (i + 1) % 5 });
+}, 6500);
+}
+componentWillUnmount() {
+if (this._timer) clearInterval(this._timer);
+}
+renderVals() {
+const open = !!(this.state && this.state.menuOpen);
+const cur = (this.state && this.state.idx) || 0;
+const scenes = [["Visit", "Come as you are", "A church family in Manyatta, Embu that will make room for you. Sundays: Bible hour 9:00 AM, main service 10:00 AM.", "Plan my visit", "FrostedVisit.dc.html", "/_blob/8b52a18aff7b81e337d61fe188e49f95", "Watercolor painting of the father welcoming the prodigal son home"], ["Watch", "Hear the Word", "Join us for the Word and worship in Swahili and English, in person or live on Facebook and YouTube.", "Watch and listen", "FrostedSermons.dc.html", "/_blob/fb8b31cdc066b951141dca2596e90324", "Watercolor painting of Jesus teaching a crowd on a hillside above the Sea of Galilee"], ["Serve", "Serve together", "Gents, ladies and youth fellowships meet on the fourth Sunday after the main service.", "Find a group", "FrostedMinistries.dc.html", "/_blob/d7669b381210e3e2ff9fb20952bdf9d4", "Watercolor painting of the Good Samaritan caring for an injured traveler"], ["Give", "Give with joy", "Give by M-Pesa Paybill 4069983 in a few taps, and support the work of the church in Embu and beyond.", "How to give", "FrostedGive.dc.html", "/_blob/750cbe86ce9c404e5c48f196af4f32cf", "Watercolor painting of a boy offering loaves and fish to Jesus"], ["Connect", "Knock, we will open", "Call or WhatsApp +254 710 772 227. A real person will reply.", "Contact us", "FrostedContact.dc.html", "/_blob/2daaaa99687b526b2b21270a66fb59b9", "Watercolor painting of Jesus knocking at a glowing wooden door"]].map((s, i) => {
+const on = i === cur;
+return {
+label: s[0], title: s[1], text: s[2], cta: s[3], href: s[4], img: s[5], alt: s[6],
+num: '0' + (i + 1) + ' / 0' + 5,
+imgClass: on ? 'kb' : '',
+imgStyle: 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1.3s ease;opacity:' + (on ? 1 : 0),
+textStyle: 'grid-area:1/1;transition:opacity .7s ease,transform .7s ease;opacity:' + (on ? 1 : 0) + ';transform:translateY(' + (on ? 0 : 26) + 'px);pointer-events:' + (on ? 'auto' : 'none') + ';visibility:' + (on ? 'visible' : 'hidden'),
+tabStyle: 'cursor:pointer;font:inherit;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;color:' + (on ? '#2A0F33' : '#FFFFFF') + ';background:' + (on ? 'linear-gradient(135deg,#F3A05A,#E17D2F)' : 'rgba(255,255,255,.14)') + ';border:1px solid ' + (on ? 'rgba(255,255,255,.7)' : 'rgba(255,255,255,.45)') + ';box-shadow:' + (on ? '0 8px 26px rgba(243,160,90,.6)' : 'none') + ';transition:all .3s ease',
+pick: () => { this._hold = true; this.setState({ idx: i }); },
+};
+});
+return { scenes, menuOpen: open, menuClosed: !open, toggleMenu: () => this.setState({ menuOpen: !open }) };
+}
+}
+</script>
+</body>
+</html>

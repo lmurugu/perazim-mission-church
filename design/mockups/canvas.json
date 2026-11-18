@@ -1,0 +1,197 @@
+{
+ "v": 3,
+ "attachments": {},
+ "boards": {
+  "Dark.dc.html": {
+   "expand": "fill",
+   "h": 1700,
+   "title": "D \u00b7 Dark, black and orange",
+   "w": 1280,
+   "x": 0,
+   "y": 2100
+  },
+  "Editorial.dc.html": {
+   "expand": "fill",
+   "h": 1700,
+   "title": "C \u00b7 Editorial calm",
+   "w": 1280,
+   "x": 2800,
+   "y": 0
+  },
+  "Frosted.dc.html": {
+   "expand": "fill",
+   "h": 1700,
+   "title": "F \u00b7 Frosted glass, home",
+   "w": 1280,
+   "x": 2800,
+   "y": 2100,
+   "is_interactive": true
+  },
+  "FrostedGive.dc.html": {
+   "expand": "fill",
+   "h": 1700,
+   "title": "F3 \u00b7 Frosted glass, give",
+   "w": 1280,
+   "x": 1400,
+   "y": 4200,
+   "is_interactive": true
+  },
+  "FrostedVisit.dc.html": {
+   "expand": "fill",
+   "h": 1700,
+   "title": "F2 \u00b7 Frosted glass, visit",
+   "w": 1280,
+   "x": 0,
+   "y": 4200,
+   "is_interactive": true
+  },
+  "FrostedSermons.dc.html": {
+   "expand": "fill",
+   "h": 1700,
+   "title": "F4 \u00b7 Sermons",
+   "w": 1280,
+   "x": 2800,
+   "y": 4200,
+   "is_interactive": true
+  },
+  "FrostedMinistries.dc.html": {
+   "expand": "fill",
+   "h": 1700,
+   "title": "F5 \u00b7 Ministries",
+   "w": 1280,
+   "x": 0,
+   "y": 6300,
+   "is_interactive": true
+  },
+  "FrostedAbout.dc.html": {
+   "expand": "fill",
+   "h": 1900,
+   "title": "F6 \u00b7 About",
+   "w": 1280,
+   "x": 1400,
+   "y": 6300,
+   "is_interactive": true
+  },
+  "FrostedContact.dc.html": {
+   "expand": "fill",
+   "h": 1600,
+   "title": "F7 \u00b7 Contact",
+   "w": 1280,
+   "x": 2800,
+   "y": 6300,
+   "is_interactive": true
+  },
+  "Light.dc.html": {
+   "expand": "fill",
+   "h": 1700,
+   "title": "E \u00b7 Light, white and royal purple",
+   "w": 1280,
+   "x": 1400,
+   "y": 2100
+  },
+  "Live.dc.html": {
+   "expand": "fill",
+   "h": 1700,
+   "title": "B \u00b7 Live and local",
+   "w": 1280,
+   "x": 1400,
+   "y": 0
+  },
+  "Main.dc.html": {
+   "expand": "fill",
+   "h": 1700,
+   "title": "A \u00b7 Clear path",
+   "w": 1280,
+   "x": 0,
+   "y": 0
+  },
+  "HomeJourney.dc.html": {
+   "expand": "fill",
+   "h": 4820,
+   "title": "G \u00b7 Journey, scroll story",
+   "w": 1280,
+   "x": 0,
+   "y": 8640,
+   "is_interactive": true
+  },
+  "HomePaths.dc.html": {
+   "expand": "fill",
+   "h": 2560,
+   "title": "H \u00b7 Pick a path, scene switcher",
+   "w": 1280,
+   "x": 1400,
+   "y": 8640,
+   "is_interactive": true
+  },
+  "HomePanels.dc.html": {
+   "expand": "fill",
+   "h": 3100,
+   "title": "I \u00b7 Expanding panels, big logo",
+   "w": 1280,
+   "x": 2800,
+   "y": 8640,
+   "is_interactive": true
+  }
+ },
+ "createdOnFiles": {
+  "at": "2026-11-18T21:30:00Z",
+  "v": 1
+ },
+ "designSystems": [],
+ "launch": {
+  "view": "canvas"
+ },
+ "notes": {
+  "n1": {
+   "kind": "title1",
+   "maxW": 2800,
+   "text": "Home page mockups for Perazim Mission Church. Current site: 30/100 for design.",
+   "w": 240,
+   "x": 0,
+   "y": -300
+  },
+  "n2": {
+   "kind": "title1",
+   "maxW": 2800,
+   "text": "Palette round: deep purple #2A0F33, royal purple #681A7D, orange #E17D2F, black and white.",
+   "w": 240,
+   "x": 0,
+   "y": 1700
+  },
+  "n3": {
+   "kind": "title1",
+   "maxW": 2800,
+   "text": "Frosted glass round: light background, orange accents, scripture words hovering behind every page.",
+   "w": 240,
+   "x": 0,
+   "y": 3800
+  },
+  "n4": {
+   "kind": "title1",
+   "maxW": 2800,
+   "text": "Interactive landing page ideas: immersive painted scenes, scroll motion, menu in a burger.",
+   "w": 240,
+   "x": 0,
+   "y": 8240
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "Live.dc.html",
+  "Editorial.dc.html",
+  "Dark.dc.html",
+  "Light.dc.html",
+  "Frosted.dc.html",
+  "FrostedVisit.dc.html",
+  "FrostedGive.dc.html",
+  "FrostedSermons.dc.html",
+  "FrostedMinistries.dc.html",
+  "FrostedAbout.dc.html",
+  "FrostedContact.dc.html",
+  "HomeJourney.dc.html",
+  "HomePaths.dc.html",
+  "HomePanels.dc.html"
+ ],
+ "pages": [],
+ "title": "Perazim home page mockups"
+}

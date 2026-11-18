@@ -4,6 +4,7 @@
 exclude:
   - recon/
   - scripts/
+  - design/
   - README.md
   - ARCHITECTURE.md
   - CONTRIBUTING.md
