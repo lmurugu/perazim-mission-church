@@ -51,9 +51,12 @@ is written into each page's canonical and share tags, `404.html`,
 `robots.txt` and `sitemap.xml`. Update those if the site moves to its own
 domain.
 
-Unconfirmed details (service times, phone, WhatsApp, email, M-Pesa paybill)
-are left off the pages. HTML comments mark where each one goes once the church
-confirms it.
+Church details (service times, phone, WhatsApp, emails, M-Pesa paybill) were
+confirmed on 2026-11-18. Service times come from the church's Order of Service
+flyer. They appear in the page footers, Visit, Contact and Give, and in the
+home page's structured data; `data/csv/campuses.csv` and
+`data/csv/config.csv` hold the same values for the apps. Update all of them
+together if anything changes.
 
 ---
 

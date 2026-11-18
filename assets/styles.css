@@ -1442,3 +1442,11 @@ a.info-card:hover { border-color: var(--accent-purple); transform: translateY(-3
 :root[data-theme="dark"] { --accent-orange-text: #F09054; }
 @media (prefers-color-scheme: dark) { :root[data-theme="auto"] { --accent-orange-text: #F09054; } }
 .sermon-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+/* Service times and M-Pesa steps */
+.times-list { list-style: none; padding: 0 !important; display: grid; gap: 0.35rem; }
+.times-list li { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px dashed var(--border-subtle); padding-bottom: 0.35rem; }
+.times-list li span:last-child { color: var(--text-primary); font-weight: 600; white-space: nowrap; }
+.mpesa-steps { padding-left: 1.2rem; display: grid; gap: 0.4rem; color: var(--text-muted); }
+.mpesa-steps strong { color: var(--text-primary); }
+.mpesa-number { font-size: 1.25rem; letter-spacing: 0.04em; }
