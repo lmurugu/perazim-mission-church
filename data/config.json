@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "config": {
+    "church_name": "Perazim Mission Church",
+    "motto": "The Place of Great Breakthrough",
+    "presiding_bishop": "Bishop Dr David Mutweri",
+    "pastoral_phone_e164": "+254710772227",
+    "mpesa_paybill": "4069983",
+    "email_info": "info@perazimchurch.org",
+    "email_bishop": "bishop@perazimchurch.org",
+    "youtube_url": "https://www.youtube.com/@perazimchurchembu",
+    "facebook_url": "https://facebook.com/perazimchurchembu",
+    "min_app_version": "2.2.0",
+    "ai_enabled": "true",
+    "ai_daily_limit": "3",
+    "community_enabled": "true"
+  }
+}

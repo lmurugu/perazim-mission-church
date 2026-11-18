@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "campuses": [
+    {
+      "id": "campus_embu",
+      "name": "Embu Central Campus",
+      "area": "Manyatta, Embu County",
+      "service_times": "",
+      "photo": "assets/fb_photos_web/2.jpg",
+      "active": true
+    },
+    {
+      "id": "campus_mwea",
+      "name": "Mwea Campus",
+      "area": "Kirinyaga County",
+      "service_times": "",
+      "photo": "assets/fb_photos_web/3.jpg",
+      "active": true
+    },
+    {
+      "id": "campus_rombo",
+      "name": "Rombo Campus",
+      "area": "Rombo, Kenya",
+      "service_times": "",
+      "photo": "assets/fb_photos_web/4.jpg",
+      "active": true
+    }
+  ]
+}

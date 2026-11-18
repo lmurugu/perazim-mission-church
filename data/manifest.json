@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "tabs": {
+    "announcements": {
+      "json": "data/announcements.json",
+      "csv": "data/csv/announcements.csv",
+      "count": 0
+    },
+    "events": {
+      "json": "data/events.json",
+      "csv": "data/csv/events.csv",
+      "count": 0
+    },
+    "hymns": {
+      "json": "data/hymns.json",
+      "csv": "data/csv/hymns.csv",
+      "count": 10
+    },
+    "riddles": {
+      "json": "data/riddles.json",
+      "csv": "data/csv/riddles.csv",
+      "count": 8
+    },
+    "jokes": {
+      "json": "data/jokes.json",
+      "csv": "data/csv/jokes.csv",
+      "count": 10
+    },
+    "sermons": {
+      "json": "data/sermons.json",
+      "csv": "data/csv/sermons.csv",
+      "count": 1
+    },
+    "verses": {
+      "json": "data/verses.json",
+      "csv": "data/csv/verses.csv",
+      "count": 7
+    },
+    "campuses": {
+      "json": "data/campuses.json",
+      "csv": "data/csv/campuses.csv",
+      "count": 3
+    },
+    "config": {
+      "json": "data/config.json",
+      "csv": "data/csv/config.csv",
+      "count": 13
+    }
+  }
+}
