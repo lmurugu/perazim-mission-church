@@ -19,6 +19,8 @@ from urllib.parse import unquote, urldefrag, urlparse
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://lmurugu.github.io/perazim-mission-church/"
 errors, warnings = [], []
+# Standalone scene pages with their own built-in menu (not the shared site menu).
+STANDALONE_MENU = {"landing/index.html"}
 
 
 def err(page, msg):
@@ -283,6 +285,8 @@ def main():
     # --- menu links the same on every page
     menus = {}
     for f in pages:
+        if f.relative_to(ROOT).as_posix() in STANDALONE_MENU:
+            continue
         html = f.read_text()
         m = re.search(r'<ul class="nav-links" id="site-menu">(.*?)</ul>', html, re.S)
         hrefs = re.findall(r'<a href="([^"]*)"', m.group(1)) if m else []
@@ -294,7 +298,7 @@ def main():
     # every real page is reachable from the menu
     for f in files:
         rel = f.relative_to(ROOT).as_posix()
-        if rel in ("404.html", "privacy/index.html"):
+        if rel in ("404.html", "privacy/index.html") or rel in STANDALONE_MENU:
             continue
         if rel not in ref:
             err(rel, "page is not linked from the menu")
