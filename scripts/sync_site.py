@@ -512,6 +512,8 @@ def sitemap():
             continue
         pri = "1.0" if key == "" else "0.8" if key in ("visit", "sermons", "give", "about", "contact", "ministries") else "0.6"
         rows.append(f"  <url><loc>{page_url(key)}</loc><lastmod>{LASTMOD}</lastmod><priority>{pri}</priority></url>")
+    # Hand-written standalone pages that sync_site.py does not generate.
+    rows.append(f"  <url><loc>{SITE}landing/</loc><lastmod>{LASTMOD}</lastmod><priority>0.6</priority></url>")
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(rows) + "\n</urlset>\n"
 
 
