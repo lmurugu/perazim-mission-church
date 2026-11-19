@@ -323,6 +323,12 @@ def render_head(key, cfg, main_html):
 
 
 # ----------------------------------------------------------------- header / hero / footer
+BURGER_DEFS = ('<svg class="burger-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">'
+               '<defs><linearGradient id="burger-grad" gradientUnits="userSpaceOnUse" x1="4" y1="0" x2="20" y2="0">'
+               '<stop offset="0" stop-color="#E17D2F"/><stop offset=".5" stop-color="#C0398F"/><stop offset="1" stop-color="#681A7D"/>'
+               '</linearGradient></defs></svg>')
+
+
 def render_header(key, cfg):
     p = prefix(key, cfg)
     items = []
@@ -340,10 +346,11 @@ def render_header(key, cfg):
     moon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
     auto = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>'
     home = "./" if p == "" else p
+    defs = BURGER_DEFS if key == "" else ""
     return f'''<a class="skip-link" href="#main-content">Skip to content</a>
   <div class="ambient" aria-hidden="true">{ambient}</div>
   <header>
-  <nav class="nav-container" aria-label="Main">
+  {defs}<nav class="nav-container" aria-label="Main">
     <a href="{home}" class="brand-wrapper" aria-label="{NAME} home">
       <img src="{p}assets/logo-transparent.png" alt="" class="nav-logo-img" width="38" height="38">
       <span class="brand-title">PERAZIM</span>
@@ -440,17 +447,15 @@ def render_footer(key, cfg):
 # ----------------------------------------------------------------- home hero
 def render_home_hero(cfg):
     return f'''<section class="home-hero" aria-labelledby="page-title">
-      <picture class="hero-art"><source srcset="assets/life/life-1.webp" type="image/webp"><img src="assets/life/life-1.jpg" alt="" width="1400" height="937" fetchpriority="high"></picture>
-      <div class="hero-glaze"></div>
       <div class="home-hero-inner">
-        <img class="home-logo" src="assets/logo-transparent.png" alt="Perazim Mission Church logo" width="230" height="230">
+        <img class="home-logo" src="assets/logo-transparent.png" alt="Perazim Mission Church logo" width="300" height="300" fetchpriority="high">
+        <p class="home-kicker">Sundays in Manyatta, Embu</p>
         <h1 id="page-title" class="home-title">For God. For People. <em>For the City.</em></h1>
         <p class="home-lead">A Christ-centred church family worshipping together in Manyatta, Embu. Come as you are. You belong here.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary cta-pulse" href="visit/">Plan a Visit</a>
-          <a class="btn btn-secondary" href="#messages">Watch the Latest Message</a>
+          <a class="btn btn-primary cta-pulse" href="visit/">Plan my visit</a>
+          <a class="btn btn-secondary" href="{FB}" target="_blank" rel="noopener">Watch live on Facebook</a>
         </div>
-        <p class="home-times">Sundays in Manyatta, Embu &middot; Bible hour 9:00 AM &middot; Main service 10:00 AM</p>
       </div>
     </section>'''
 
