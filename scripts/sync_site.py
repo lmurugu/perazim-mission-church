@@ -162,6 +162,15 @@ PAGES = {
         ctas=[("primary", "Contact us", "contact/", False)],
         verse=("An open door", "Behold, I stand at the door and knock.", "Revelation 3:20 (ESV)"),
     ),
+    "delete-account": dict(
+        title="Delete your account | Perazim Mission Church, Embu",
+        desc="How to delete your Perazim app account, what is removed, and what the church keeps for legal reasons.",
+        nav="Delete account", art="jesus-at-the-door", art_pos="50% 40%", in_menu=False,
+        kicker="Account deletion", h1="Delete your <em>Perazim account</em>",
+        lead="You can delete your account from the Perazim app, or ask the church office to do it for you.",
+        ctas=[("primary", "Contact the church office", "contact/", False)],
+        verse=("Come to me", "Come to me, all you who are weary and burdened, and I will give you rest.", "Matthew 11:28 (ESV)"),
+    ),
     "404.html": dict(
         title="Page not found | Perazim Mission Church",
         desc="This page could not be found.",
