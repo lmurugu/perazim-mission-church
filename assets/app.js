@@ -1,212 +1,128 @@
 /* ===========================================================
-   Perazim Church Site v5 — Unified Dynamic Engine
-   Reference: VOUS / ELEVATION / PASSION City Church benchmarks.
+   Perazim Mission Church: site behaviour
 
-   STRUCTURE (in IIFE order, all DOMContentLoaded-aware):
-   1. Mouse-parallax ambient SVG (hero + values)
-   2. 3D tilt on .tilt-card / .campus-card
-   3. Slider prev/next on .campus-grid
-   4. Smooth scroll for hash anchors
-   5. Nav link focus class
-   6. Image onerror → CSS gradient fallback
-   7. Theme toggle (3-state cycle: light → dark → auto)
-   8. Scroll-reveal (IntersectionObserver)
-   9. Sticky navbar morph on scroll
+   1. Theme toggle (light, dark, auto)
+   2. Burger menu
+   3. Header style once the page is scrolled
+   4. Scroll reveal
+   5. Copy buttons (for example the M-Pesa paybill number)
+   6. Footer year
 
-   prefers-reduced-motion respected globally.
+   Everything works without JavaScript except these enhancements.
+   prefers-reduced-motion is respected (no reveal motion).
    =========================================================== */
-
 (function () {
   'use strict';
 
-  var prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+  var prefersReduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ============================================================
-  // 1. MOUSE-PARALLAX for ambient SVG watermarks
-  //    v5 spec: hero intensity 0.045, values intensity 0.035
-  // ============================================================
-  function attachParallax(container, element, intensity) {
-    if (!container || !element || prefersReduce) return;
-    var rafId = null;
-    container.addEventListener('mousemove', function (e) {
-      if (rafId) return;
-      rafId = requestAnimationFrame(function () {
-        var rect = container.getBoundingClientRect();
-        var x = (e.clientX - rect.left - rect.width / 2) * intensity;
-        var y = (e.clientY - rect.top - rect.height / 2) * intensity;
-        element.style.transform =
-          'translate3d(' + x + 'px,' + y + 'px,0) rotate(' + (x * 0.03) + 'deg)';
-        rafId = null;
-      });
-    });
-    container.addEventListener('mouseleave', function () {
-      element.style.transform = 'translate3d(0,0,0) rotate(0deg)';
-    });
-  }
-
-  var heroIsland   = document.querySelector('.hero-island');
-  var heroVector   = document.querySelector('.hero-vector-layer');
-  var valuesIsland = document.querySelector('.values-section');
-  var valuesVector = document.querySelector('.ambient-vector-bg');
-  attachParallax(heroIsland,   heroVector,   0.045);
-  attachParallax(valuesIsland, valuesVector, 0.035);
-
-  // ============================================================
-  // 2. 3D TILT on .tilt-card and .campus-card
-  //    v5 spec: ±5deg (slightly subtler than v4's ±6deg)
-  // ============================================================
-  var tiltCards = document.querySelectorAll('.tilt-card, .campus-card');
-  if (!prefersReduce) {
-    tiltCards.forEach(function (card) {
-      var tiltRaf = null;
-      card.addEventListener('mousemove', function (e) {
-        if (tiltRaf) return;
-        tiltRaf = requestAnimationFrame(function () {
-          var rect = card.getBoundingClientRect();
-          var x = e.clientX - rect.left;
-          var y = e.clientY - rect.top;
-          var centerX = rect.width / 2;
-          var centerY = rect.height / 2;
-          var rotateX = ((y - centerY) / centerY) * -5;
-          var rotateY = ((x - centerX) / centerX) *  5;
-          card.style.transform =
-            'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-6px)';
-          tiltRaf = null;
-        });
-      });
-      card.addEventListener('mouseleave', function () {
-        card.style.transform =
-          'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
-      });
-    });
-  }
-
-  // ============================================================
-  // 3. SLIDER prev/next on .campus-grid
-  // ============================================================
-  var slider  = document.querySelector('.campus-grid');
-  var prevBtn = document.getElementById('slider-prev');
-  var nextBtn = document.getElementById('slider-next');
-  if (slider && prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', function () {
-      slider.scrollBy({ left: -360, behavior: 'smooth' });
-    });
-    nextBtn.addEventListener('click', function () {
-      slider.scrollBy({ left: 360, behavior: 'smooth' });
-    });
-  }
-
-  // ============================================================
-  // 4. SMOOTH SCROLL for hash anchors
-  // ============================================================
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      var href = a.getAttribute('href');
-      if (!href || href === '#' || href.length < 2) return;
-      var target = document.querySelector(href);
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({ behavior: prefersReduce ? 'auto' : 'smooth', block: 'start' });
-    });
-  });
-
-  // ============================================================
-  // 5. NAV LINK focus parity
-  // ============================================================
-  document.querySelectorAll('.nav-links a').forEach(function (a) {
-    a.addEventListener('focus', function () { a.classList.add('is-focused'); });
-    a.addEventListener('blur',  function () { a.classList.remove('is-focused'); });
-  });
-
-  // ============================================================
-  // 6. IMAGE onerror → CSS gradient fallback (offline-safe)
-  // ============================================================
-  document.querySelectorAll('img').forEach(function (img) {
-    img.addEventListener('error', function () {
-      img.style.visibility = 'hidden';
-      img.style.opacity = '0';
-    });
-  });
-
-  // ============================================================
-  // 7. THEME TOGGLE (light / dark / auto cycle) — preserved from v4
-  // ============================================================
+  // 1. Theme toggle: light -> dark -> auto -> light. Light is the default.
   var themeBtn = document.getElementById('theme-toggle');
-  if (themeBtn) {
-    var ORDER = ['light', 'dark', 'auto'];
-    function current() { return document.documentElement.getAttribute('data-theme') || 'auto'; }
-    function setTheme(next, persist) {
-      document.documentElement.setAttribute('data-theme', next);
-      if (persist) {
-        try {
-          if (next === 'auto') localStorage.removeItem('perazim-theme');
-          else localStorage.setItem('perazim-theme', next);
-        } catch (e) { /* storage blocked */ }
-      }
+  var ORDER = ['light', 'dark', 'auto'];
+  var LABEL = { light: 'Light theme', dark: 'Dark theme', auto: 'Automatic theme' };
+  function currentTheme() { return root.getAttribute('data-theme') || 'light'; }
+  function setTheme(next, persist) {
+    root.setAttribute('data-theme', next);
+    if (themeBtn) themeBtn.setAttribute('title', LABEL[next] + '. Click to change.');
+    if (persist) {
+      try {
+        if (next === 'light') localStorage.removeItem('perazim-theme');
+        else localStorage.setItem('perazim-theme', next);
+      } catch (e) { /* storage blocked: the choice lasts for this page only */ }
     }
+  }
+  if (themeBtn) {
+    setTheme(currentTheme(), false);
     themeBtn.addEventListener('click', function () {
-      var idx = ORDER.indexOf(current());
-      setTheme(ORDER[(idx + 1) % ORDER.length], true);
+      setTheme(ORDER[(ORDER.indexOf(currentTheme()) + 1) % ORDER.length], true);
     });
     window.addEventListener('storage', function (e) {
-      if (e.key === 'perazim-theme' && e.newValue) setTheme(e.newValue, false);
+      if (e.key === 'perazim-theme') setTheme(e.newValue === 'dark' || e.newValue === 'auto' ? e.newValue : 'light', false);
     });
   }
 
-  // ============================================================
-  // 8. SCROLL REVEAL (IntersectionObserver)
-  //    v5 spec: target the major sections + grid children, add stagger
-  // ============================================================
-  if ('IntersectionObserver' in window && !prefersReduce) {
-    var revealTargets = document.querySelectorAll(
-      '.hero-content, .section-header, .campus-card, ' +
-      '.leadership-island, .values-section, .value-item, ' +
-      '.poster-card, .messages-island, .section-eyebrow-wrap'
-    );
-    revealTargets.forEach(function (el) {
-      el.classList.add('reveal-on-scroll');
-      if (el.classList.contains('campus-card') ||
-          el.classList.contains('value-item') ||
-          el.classList.contains('poster-card')) {
-        // Auto-stagger: cycle through stagger-1..stagger-4 by document order
-        var allSiblings = Array.from(el.parentElement ? el.parentElement.children : []);
-        var i = allSiblings.indexOf(el);
-        var staggerN = (i % 4) + 1;
-        el.classList.add('stagger-' + staggerN);
-      }
+  // 2. Burger menu (used at every screen width)
+  var navBar = document.querySelector('.nav-container');
+  var navToggle = document.querySelector('.nav-toggle');
+  if (navBar && navToggle) {
+    var setMenu = function (open) {
+      navBar.classList.toggle('nav-open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    navToggle.addEventListener('click', function () { setMenu(!navBar.classList.contains('nav-open')); });
+    navBar.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
     });
-    var revealObserver = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-revealed');
-          obs.unobserve(entry.target); // Reveal once, then stop observing
-        }
-      });
-    }, { root: null, rootMargin: '0px 0px -60px 0px', threshold: 0.12 });
-    revealTargets.forEach(function (el) { revealObserver.observe(el); });
-  } else {
-    // No IntersectionObserver OR reduced-motion: make sure everything is visible
-    // so no content gets stuck at opacity:0.
-    document.querySelectorAll('.reveal-on-scroll').forEach(function (el) {
-      el.classList.add('is-revealed');
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navBar.classList.contains('nav-open')) { setMenu(false); navToggle.focus(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (navBar.classList.contains('nav-open') && !navBar.contains(e.target)) setMenu(false);
     });
   }
 
-  // ============================================================
-  // 9. STICKY NAVBAR morph on scroll
-  //    v5 spec: .scrolled class added after 40px
-  // ============================================================
-  var navbar = document.querySelector('.nav-container');
-  if (navbar && !prefersReduce) {
-    var lastScrolled = false;
-    function onScroll() {
-      var scrolled = window.scrollY > 40;
-      if (scrolled !== lastScrolled) {
-        navbar.classList.toggle('scrolled', scrolled);
-        lastScrolled = scrolled;
-      }
-    }
+  // 3. Header turns frosted-light once the page is scrolled
+  if (navBar) {
+    var scrolled = false;
+    var onScroll = function () {
+      var now = window.scrollY > 24;
+      if (now !== scrolled) { scrolled = now; navBar.classList.toggle('scrolled', now); }
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // initial state
+    onScroll();
   }
+
+  // 4. Scroll reveal: only things below the first screen are animated, so the
+  //    first view (and link-preview screenshots) is never blank.
+  if ('IntersectionObserver' in window && !prefersReduce) {
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var targets = Array.prototype.filter.call(document.querySelectorAll(
+      '.main-wrapper .section-heading, .main-wrapper .section-intro, .info-card, .feed-card, .faq-item, ' +
+      '.campus-card, .cta-band, .messages-island, .values-section, .leadership-island, .life-grid img, ' +
+      '.map-frame, .path, .value-item'
+    ), function (el) { return el.getBoundingClientRect().top > vh * 0.9; });
+    var observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-revealed'); obs.unobserve(entry.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    targets.forEach(function (el) {
+      el.classList.add('reveal-on-scroll');
+      var i = Array.prototype.indexOf.call(el.parentElement ? el.parentElement.children : [], el);
+      if (i > 0) el.classList.add('stagger-' + Math.min((i % 4) + 1, 4));
+      observer.observe(el);
+    });
+  }
+
+  // 5. Copy buttons
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    var original = btn.textContent;
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      var done = function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = original; }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {});
+      } else {
+        var t = document.createElement('textarea');
+        t.value = text;
+        t.setAttribute('readonly', '');
+        t.style.position = 'fixed';
+        t.style.opacity = '0';
+        document.body.appendChild(t);
+        t.select();
+        try { document.execCommand('copy'); done(); } catch (e) { /* nothing to do */ }
+        t.remove();
+      }
+    });
+  });
+
+  // 6. Footer year
+  document.querySelectorAll('[data-year]').forEach(function (el) {
+    el.textContent = String(new Date().getFullYear());
+  });
 })();

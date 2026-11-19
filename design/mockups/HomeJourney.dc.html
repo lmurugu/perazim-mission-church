@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Perazim home, journey</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap">
+<style>
+
+@keyframes riseIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes menuIn{from{opacity:0;transform:translateY(-10px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes linkIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+@keyframes kenburns{from{transform:scale(1.04)}to{transform:scale(1.14) translate(-1.5%,-1%)}}
+@keyframes plx{from{transform:translateY(-5%) scale(1.14)}to{transform:translateY(5%) scale(1.14)}}
+@keyframes fly{0%{transform:translate(-120px,0) scaleY(1)}25%{transform:translate(340px,-26px) scaleY(.7)}50%{transform:translate(820px,10px) scaleY(1)}75%{transform:translate(1180px,-30px) scaleY(.7)}100%{transform:translate(1500px,0) scaleY(1)}}
+@keyframes blobMove{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,-30px) scale(1.12)}}
+@keyframes glowBreath{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes ctaPulse{0%,100%{box-shadow:0 8px 24px rgba(225,125,47,.4)}50%{box-shadow:0 10px 40px rgba(243,160,90,.85),0 0 0 7px rgba(243,160,90,.20)}}
+@keyframes drift{0%{transform:translateY(0)}50%{transform:translateY(-14px)}100%{transform:translateY(0)}}
+body{margin:0;background:#FFFFFF;color:#2A0F33;font-family:Inter,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.92}
+.display{font-family:Fraunces,Georgia,serif;font-weight:700;letter-spacing:-.02em}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:blobMove 14s ease-in-out infinite alternate}
+.word{position:absolute;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;color:#681A7D;opacity:.13;pointer-events:none;animation:drift 9s ease-in-out infinite;white-space:nowrap}
+.dove{position:absolute;left:0;opacity:.9;pointer-events:none;animation:fly 24s linear infinite;filter:drop-shadow(0 4px 8px rgba(42,15,51,.35))}
+.navdark{background:rgba(42,15,51,.40);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.28);border-radius:26px;box-shadow:0 14px 40px rgba(0,0,0,.25);color:#FFFFFF;animation:riseIn .8s ease backwards}
+.burger{width:48px;height:48px;padding:0;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:linear-gradient(135deg,#4B1260,#7A2C98);color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 22px rgba(75,18,96,.40),0 0 22px rgba(190,100,230,.45);transition:transform .25s ease,box-shadow .25s ease}
+.burger:hover{transform:scale(1.08);box-shadow:0 10px 26px rgba(75,18,96,.5),0 0 34px rgba(190,100,230,.75)}
+.burger:focus-visible{outline:3px solid #E17D2F;outline-offset:3px}
+.menu-panel{position:absolute;top:calc(100% + 12px);right:0;z-index:60;min-width:290px;padding:12px;border-radius:24px;display:flex;flex-direction:column;gap:4px;background:linear-gradient(135deg,rgba(255,250,255,.97),rgba(242,218,242,.95));border:1px solid rgba(255,255,255,.9);box-shadow:0 28px 70px rgba(75,18,96,.40),0 0 40px rgba(190,100,230,.30);animation:menuIn .28s ease both}
+.menu-link{display:block;padding:14px 18px;border-radius:16px;font-size:17px;font-weight:600;color:#2A0F33;transition:background .2s ease,transform .2s ease;animation:linkIn .35s ease both}
+.menu-link:hover{background:rgba(104,26,125,.14);transform:translateX(5px)}
+.menu-link.active{background:linear-gradient(135deg,#F3A05A,#E17D2F);color:#2A0F33}
+.btn-orange{background:linear-gradient(135deg,#F3A05A,#E17D2F);color:#2A0F33;box-shadow:0 8px 24px rgba(225,125,47,.4);display:inline-block;transition:transform .25s ease,box-shadow .25s ease}
+.btn-orange:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 36px rgba(243,160,90,.75)}
+.btn-purple{background:linear-gradient(135deg,#4B1260,#7A2C98);color:#FFFFFF;box-shadow:0 8px 22px rgba(75,18,96,.35);display:inline-block;transition:transform .25s ease,box-shadow .25s ease}
+.btn-purple:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 34px rgba(122,44,152,.55)}
+.btn-line{border:1.5px solid rgba(255,255,255,.85);color:#FFFFFF;display:inline-block;transition:background .25s ease,transform .25s ease}
+.btn-line:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
+.glass{background:linear-gradient(135deg,rgba(255,255,255,.58) 0%,rgba(238,208,236,.55) 100%);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.7);box-shadow:0 20px 50px rgba(75,18,96,.20),inset 0 1px 0 rgba(255,255,255,.7);border-radius:26px;color:#2A0F33}
+.dglass{background:linear-gradient(135deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,.08) 100%);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.4);box-shadow:0 18px 44px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.4);border-radius:22px;color:#FFFFFF}
+.pop{color:#2A0F33;text-shadow:0 1px 0 rgba(255,255,255,.85),0 5px 12px rgba(75,18,96,.30),0 16px 36px rgba(75,18,96,.28)}
+.label{color:#4B1260;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+.card-purple,.card-pink,.card-orange{position:relative;border-radius:26px;-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border:1px solid rgba(255,255,255,.45);transition:transform .3s ease}
+.card-purple{background:linear-gradient(135deg,rgba(58,13,77,.88),rgba(106,36,135,.80));box-shadow:0 22px 50px rgba(75,18,96,.35),inset 0 1px 0 rgba(255,255,255,.35);color:#FFFFFF}
+.card-pink{background:linear-gradient(135deg,rgba(150,22,90,.88),rgba(176,32,100,.82));box-shadow:0 22px 50px rgba(168,30,99,.32),inset 0 1px 0 rgba(255,255,255,.35);color:#FFFFFF}
+.card-orange{background:linear-gradient(135deg,rgba(247,178,122,.66),rgba(243,160,90,.54) 55%,rgba(245,154,138,.54));box-shadow:0 22px 50px rgba(225,125,47,.30),inset 0 1px 0 rgba(255,255,255,.5);color:#2A0F33}
+.card-purple::after,.card-pink::after,.card-orange::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;animation:glowBreath 4.5s ease-in-out infinite}
+.card-purple::after{box-shadow:0 0 46px 6px rgba(190,100,230,.60),inset 0 0 24px rgba(214,150,245,.28)}
+.card-pink::after{box-shadow:0 0 46px 6px rgba(244,96,160,.60),inset 0 0 24px rgba(255,170,205,.28)}
+.card-orange::after{box-shadow:0 0 46px 6px rgba(247,160,80,.70),inset 0 0 24px rgba(255,210,160,.40)}
+.card-purple:hover,.card-pink:hover,.card-orange:hover{transform:translateY(-8px)}
+@supports (animation-timeline:view()){
+.plx{animation:plx linear both;animation-timeline:view()}
+.rise{animation:riseIn linear both;animation-timeline:view();animation-range:entry 5% entry 60%}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="position:relative;overflow:hidden;width:100%;max-width:1280px;margin:0 auto;background:#2A0F33">
+<section style="position:relative;height:860px;overflow:hidden">
+  <img class="plx" src="/_blob/8b52a18aff7b81e337d61fe188e49f95" alt="Watercolor painting of the father welcoming the prodigal son home" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.14)">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,15,51,.93) 0%,rgba(42,15,51,.80) 40%,rgba(42,15,51,.18) 78%,rgba(42,15,51,0) 100%)"></div>
+  <div style="position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(0deg,rgba(42,15,51,.85),rgba(42,15,51,0))"></div>
+  <svg class="dove" style="top:150px;animation-delay:-2s" width="56" height="26" viewBox="0 0 60 26" aria-hidden="true"><path d="M2 14C10 2 22 2 30 14C38 2 50 2 58 14C50 10 38 12 30 22C22 12 10 10 2 14Z" fill="#FFFFFF"/></svg><svg class="dove" style="top:210px;animation-delay:-8s;transform:scale(.7)" width="56" height="26" viewBox="0 0 60 26" aria-hidden="true"><path d="M2 14C10 2 22 2 30 14C38 2 50 2 58 14C50 10 38 12 30 22C22 12 10 10 2 14Z" fill="#FFFFFF"/></svg><svg class="dove" style="top:120px;animation-delay:-14s;transform:scale(.55)" width="56" height="26" viewBox="0 0 60 26" aria-hidden="true"><path d="M2 14C10 2 22 2 30 14C38 2 50 2 58 14C50 10 38 12 30 22C22 12 10 10 2 14Z" fill="#FFFFFF"/></svg>
+  <nav class="navdark" style="position:absolute;top:24px;left:48px;right:48px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 26px">
+  <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;text-shadow:0 2px 10px rgba(42,15,51,.6)"><img src="/_blob/92b478387a7ed8c2f11b997975e8212e" alt="" width="38" height="38" style="display:block">Perazim <span style="color:#F7C9A0">Mission Church</span></div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="FrostedVisit.dc.html" class="btn-orange" style="padding:12px 20px;border-radius:999px;font-weight:700">Plan my visit</a>
+    <button type="button" class="burger" aria-label="Menu" aria-haspopup="true" onClick="{{toggleMenu}}">
+      <sc-if value="{{menuClosed}}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></sc-if>
+      <sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></sc-if>
+    </button>
+  </div>
+  <sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+    <div class="menu-panel"><a class="menu-link active" href="Frosted.dc.html">Home</a><a class="menu-link" href="FrostedVisit.dc.html">Visit</a><a class="menu-link" href="FrostedSermons.dc.html">Sermons</a><a class="menu-link" href="FrostedMinistries.dc.html">Ministries</a><a class="menu-link" href="FrostedGive.dc.html">Give</a><a class="menu-link" href="FrostedAbout.dc.html">About</a><a class="menu-link" href="FrostedContact.dc.html">Contact</a></div>
+  </sc-if>
+</nav>
+
+  <div style="position:absolute;left:72px;top:210px;width:640px;color:#FFFFFF">
+    <p style="margin:0 0 18px;font-size:14px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F7C9A0;animation:riseIn .9s ease backwards">01 · Sundays in Manyatta, Embu</p>
+    <h1 class="display" style="margin:0 0 22px;font-size:132px;line-height:.92;text-shadow:0 6px 40px rgba(0,0,0,.5);animation:riseIn 1s ease .1s backwards">WELCOME<br>HOME</h1>
+    <p style="margin:0 0 30px;max-width:470px;font-size:19px;line-height:1.65;text-shadow:0 2px 12px rgba(0,0,0,.5);animation:riseIn 1s ease .25s backwards">Perazim Mission Church is a Christ-centred family in Embu. Come as you are; there is a seat for you.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;animation:riseIn 1s ease .4s backwards">
+      <a href="FrostedVisit.dc.html" class="btn-orange" style="padding:17px 30px;border-radius:999px;font-weight:700;animation:ctaPulse 2.8s ease-in-out infinite">Start the journey  ↓</a>
+      <a href="FrostedVisit.dc.html" class="btn-line" style="padding:16px 28px;border-radius:999px;font-weight:700">Plan my visit</a>
+    </div>
+  </div>
+  <div class="dglass" style="position:absolute;left:72px;right:72px;bottom:40px;padding:22px 30px;display:flex;flex-wrap:wrap;gap:12px 48px;justify-content:space-between;align-items:center;animation:riseIn 1s ease .55s backwards">
+    <div><p style="margin:0 0 2px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F7C9A0">Sundays</p><p style="margin:0;font-size:18px;font-weight:600">Bible hour 9:00 AM · Main service 10:00 AM – 1:00 PM</p></div>
+    <div><p style="margin:0 0 2px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F7C9A0">Where</p><p style="margin:0;font-size:18px;font-weight:600">Manyatta, Embu</p></div>
+    <div><p style="margin:0 0 2px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F7C9A0">Languages</p><p style="margin:0;font-size:18px;font-weight:600">Swahili and English</p></div>
+  </div>
+</section>
+<section style="position:relative;height:720px;overflow:hidden;display:flex;align-items:center;justify-content:flex-start">
+  <img class="plx" src="/_blob/fb8b31cdc066b951141dca2596e90324" alt="Watercolor painting of Jesus teaching a crowd on a hillside above the Sea of Galilee" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.14)">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,15,51,.93) 0%,rgba(42,15,51,.78) 40%,rgba(42,15,51,.16) 74%,rgba(42,15,51,0) 100%)"></div>
+  <div class="rise" style="position:relative;width:500px;max-width:100%;box-sizing:border-box;padding:0 72px;margin:0 0;color:#FFFFFF">
+    <p style="margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F7C9A0">02 · Worship</p>
+    <h2 class="display" style="margin:0 0 18px;font-size:68px;line-height:1.02;text-shadow:0 4px 24px rgba(0,0,0,.45)">Hear the Word</h2>
+    <div style="width:64px;height:3px;border-radius:3px;background:#E17D2F;margin:0 0 20px"></div>
+    <p style="margin:0 0 28px;font-size:18px;line-height:1.65;text-shadow:0 2px 12px rgba(0,0,0,.5)">Join us on Sundays for the Word and worship, in Swahili and English, or watch live on Facebook and YouTube.</p>
+    <a href="FrostedSermons.dc.html" class="btn-orange" style="padding:16px 28px;border-radius:999px;font-weight:700">Watch and listen  →</a>
+  </div>
+</section>
+<section style="position:relative;height:720px;overflow:hidden;display:flex;align-items:center;justify-content:flex-end">
+  <img class="plx" src="/_blob/d7669b381210e3e2ff9fb20952bdf9d4" alt="Watercolor painting of the Good Samaritan caring for an injured traveler" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.14)">
+  <div style="position:absolute;inset:0;background:linear-gradient(270deg,rgba(42,15,51,.93) 0%,rgba(42,15,51,.78) 40%,rgba(42,15,51,.16) 74%,rgba(42,15,51,0) 100%)"></div>
+  <div class="rise" style="position:relative;width:500px;max-width:100%;box-sizing:border-box;padding:0 72px;margin:0 0;color:#FFFFFF">
+    <p style="margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F7C9A0">03 · Community</p>
+    <h2 class="display" style="margin:0 0 18px;font-size:68px;line-height:1.02;text-shadow:0 4px 24px rgba(0,0,0,.45)">Serve together</h2>
+    <div style="width:64px;height:3px;border-radius:3px;background:#E17D2F;margin:0 0 20px"></div>
+    <p style="margin:0 0 28px;font-size:18px;line-height:1.65;text-shadow:0 2px 12px rgba(0,0,0,.5)">Gents, ladies and youth fellowships meet on the fourth Sunday after the main service. There is a place for you to serve.</p>
+    <a href="FrostedMinistries.dc.html" class="btn-orange" style="padding:16px 28px;border-radius:999px;font-weight:700">Find a group  →</a>
+  </div>
+</section>
+<section style="position:relative;height:720px;overflow:hidden;display:flex;align-items:center;justify-content:flex-start">
+  <img class="plx" src="/_blob/750cbe86ce9c404e5c48f196af4f32cf" alt="Watercolor painting of a boy offering loaves and fish to Jesus" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.14)">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,15,51,.93) 0%,rgba(42,15,51,.78) 40%,rgba(42,15,51,.16) 74%,rgba(42,15,51,0) 100%)"></div>
+  <div class="rise" style="position:relative;width:500px;max-width:100%;box-sizing:border-box;padding:0 72px;margin:0 0;color:#FFFFFF">
+    <p style="margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F7C9A0">04 · Generosity</p>
+    <h2 class="display" style="margin:0 0 18px;font-size:68px;line-height:1.02;text-shadow:0 4px 24px rgba(0,0,0,.45)">Give with joy</h2>
+    <div style="width:64px;height:3px;border-radius:3px;background:#E17D2F;margin:0 0 20px"></div>
+    <p style="margin:0 0 28px;font-size:18px;line-height:1.65;text-shadow:0 2px 12px rgba(0,0,0,.5)">Give by M-Pesa Paybill 4069983 in a few taps. Your giving supports the work of the church in Embu and beyond.</p>
+    <a href="FrostedGive.dc.html" class="btn-orange" style="padding:16px 28px;border-radius:999px;font-weight:700">How to give  →</a>
+  </div>
+</section>
+<section style="position:relative;height:720px;overflow:hidden;display:flex;align-items:center;justify-content:flex-end">
+  <img class="plx" src="/_blob/398c038f0472307ae9461ecbd28d4c5a" alt="Watercolor painting of Jesus calling fishermen at the Sea of Galilee" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.14)">
+  <div style="position:absolute;inset:0;background:linear-gradient(270deg,rgba(42,15,51,.93) 0%,rgba(42,15,51,.78) 40%,rgba(42,15,51,.16) 74%,rgba(42,15,51,0) 100%)"></div>
+  <div class="rise" style="position:relative;width:500px;max-width:100%;box-sizing:border-box;padding:0 72px;margin:0 0;color:#FFFFFF">
+    <p style="margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F7C9A0">05 · Belonging</p>
+    <h2 class="display" style="margin:0 0 18px;font-size:68px;line-height:1.02;text-shadow:0 4px 24px rgba(0,0,0,.45)">Follow Him with us</h2>
+    <div style="width:64px;height:3px;border-radius:3px;background:#E17D2F;margin:0 0 20px"></div>
+    <p style="margin:0 0 28px;font-size:18px;line-height:1.65;text-shadow:0 2px 12px rgba(0,0,0,.5)">Led by Bishop Dr David Mutweri and Rev. Margaret Mutweri, a Pentecostal and Evangelical church family in Manyatta.</p>
+    <a href="FrostedAbout.dc.html" class="btn-orange" style="padding:16px 28px;border-radius:999px;font-weight:700">Our story  →</a>
+  </div>
+</section>
+<section style="position:relative;height:720px;overflow:hidden;display:flex;align-items:center;justify-content:flex-start">
+  <img class="plx" src="/_blob/2daaaa99687b526b2b21270a66fb59b9" alt="Watercolor painting of Jesus knocking at a glowing wooden door" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.14)">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,15,51,.93) 0%,rgba(42,15,51,.78) 40%,rgba(42,15,51,.16) 74%,rgba(42,15,51,0) 100%)"></div>
+  <div class="rise" style="position:relative;width:500px;max-width:100%;box-sizing:border-box;padding:0 72px;margin:0 0;color:#FFFFFF">
+    <p style="margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#F7C9A0">06 · Come in</p>
+    <h2 class="display" style="margin:0 0 18px;font-size:68px;line-height:1.02;text-shadow:0 4px 24px rgba(0,0,0,.45)">Knock, we will open</h2>
+    <div style="width:64px;height:3px;border-radius:3px;background:#E17D2F;margin:0 0 20px"></div>
+    <p style="margin:0 0 28px;font-size:18px;line-height:1.65;text-shadow:0 2px 12px rgba(0,0,0,.5)">Call or WhatsApp +254 710 772 227. A real person will reply, and we would love to hear from you.</p>
+    <a href="FrostedContact.dc.html" class="btn-orange" style="padding:16px 28px;border-radius:999px;font-weight:700">Contact us  →</a>
+  </div>
+</section>
+<footer style="position:relative;background:linear-gradient(180deg,#2A0F33,#4B1260);padding:64px 72px 48px;color:#FFFFFF;display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:center">
+  <div style="display:flex;align-items:center;gap:16px"><img src="/_blob/92b478387a7ed8c2f11b997975e8212e" alt="" width="64" height="64" style="display:block"><div><p style="margin:0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px">Perazim Mission Church</p><p style="margin:4px 0 0;font-size:15px;color:#F7C9A0">For God. For People. For the City.</p></div></div>
+  <div style="font-size:15px;line-height:1.7">Manyatta, Embu · Bishop Dr David Mutweri<br>+254 710 772 227 (WhatsApp)<br>info@perazimchurch.org · bishop@perazimchurch.org</div>
+  <a href="FrostedVisit.dc.html" class="btn-orange" style="padding:16px 28px;border-radius:999px;font-weight:700">Plan my visit</a>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":4820}}'>
+class Component extends DCLogic {
+renderVals() {
+const open = !!(this.state && this.state.menuOpen);
+return { menuOpen: open, menuClosed: !open, toggleMenu: () => this.setState({ menuOpen: !open }) };
+}
+}
+</script>
+</body>
+</html>

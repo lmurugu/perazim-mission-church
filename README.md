@@ -1,209 +1,90 @@
-# Perazim Mission Church — Official Website
+# Perazim Mission Church: official website
 
-[![Status](https://img.shields.io/badge/status-production--ready-success.svg)](https://github.com/lmurugu/perazim-mission-church)
-[![Tests](https://img.shields.io/badge/verification-86%2F86%20passing-brightgreen.svg)](recon/verify_v5upgrade.py)
-[![Design Standard](https://img.shields.io/badge/design-VOUS%20%7C%20Passion%20City%20Standard-blueviolet.svg)](#design-system--visual-standard)
-[![Data Policy](https://img.shields.io/badge/data%20integrity-zero%20fabrication-blue.svg)](#data-integrity-policy)
+The website of **Perazim Mission Church (PMC)**, Embu, Kenya, under the leadership of
+Bishop Dr. David Mutweri. Plain HTML, CSS and a little JavaScript, hosted on GitHub Pages.
+No framework, no build step for visitors.
 
-The official web platform for **Perazim Mission Church (PMC)**, headquartered in Embu, Kenya under the spiritual leadership of Bishop Dr. David Mutweri. 
+Live address: `https://lmurugu.github.io/perazim-mission-church/`
 
-Built with an editorial aesthetic influenced by premier global church platforms (VOUS Church, Passion City, Mariners Church), featuring native CSS motion dynamics, a 3-state theme engine (Light / Dark / System Auto), and strict adherence to verified real church media and leadership records.
+## Pages
 
----
+| Route | Page |
+|---|---|
+| `/` | Home |
+| `/visit/` | Plan a visit: times, place, map, first-visit questions |
+| `/sermons/` | Messages (from the shared feed, linked to YouTube) |
+| `/ministries/` | Fellowships, Sunday school, prayer times, ways to serve |
+| `/give/` | Giving by M-Pesa and on Sunday |
+| `/about/` | Our name, mission, leadership, values, beliefs |
+| `/contact/` | Phone, WhatsApp, email, Facebook, YouTube, directions |
+| `/next-steps/` | What to do after your first visit |
+| `/news/` | Announcements and events (shared feed) |
+| `/hymns/`, `/riddles/`, `/jokes/` | Family resources (shared feed) |
+| `/privacy/` | What the site does and does not collect |
+| `404.html` | Friendly "page not found", not indexed |
 
-## Table of Contents
+## Design
 
-- [Site Architecture](#site-architecture)
-- [Design System & Visual Standard](#design-system--visual-standard)
-- [Trending Features & Content Strategy (September 2026)](#trending-features--content-strategy-september-2026)
-- [Data Integrity Policy](#data-integrity-policy)
-- [Directory Structure](#directory-structure)
-- [Automated Verification & Quality Gates](#automated-verification--quality-gates)
-- [Local Development & Preview](#local-development--preview)
-- [Deployment Guide](#deployment-guide)
-- [Contributing](#contributing)
-- [License](#license)
+Frosted-glass look on the church's brand colours: deep purple `#2A0F33`, royal purple
+`#681A7D` and orange `#E17D2F`. Light mode is the default; dark and automatic modes are
+available from the sun/moon button. Every page has a painted full-width hero with a
+frosted card, a call to action and a verse. The menu is a burger menu at every screen width.
 
----
+- Type: Plus Jakarta Sans (headings), Inter (text), Fraunces (home title only)
+- Colour and spacing tokens live at the top of `assets/styles.css`
+- Motion: scroll reveals and glowing cards, all switched off for `prefers-reduced-motion`
+- Everything important works without JavaScript
 
-## Site Architecture
+## SEO and sharing
 
-The project is structured as a multi-page web application optimized for fast static delivery, zero framework overhead, and complete cross-device accessibility.
+Each page has a unique title and description, a canonical URL, Open Graph and Twitter
+tags with an image, light and dark `theme-color`, icons and a web manifest. Structured data
+(JSON-LD) describes the church, the website, breadcrumbs and each page, plus the
+first-visit FAQ. `sitemap.xml` and `robots.txt` are generated.
 
-| Route | Page | Purpose | Verified Assets |
-|---|---|---|---|
-| `/` | **Home** | Editorial landing page, hero island, core values, campus carousel, mission statement | Real cover photo, transparent vector mark, bishop portrait |
-| `/sermons/` | **Sermons Archive** | Curated catalog of messages, seminars, and teachings | Real YouTube embed (`3O6meSzCl3I`) & metadata |
-| `/visit/` | **Plan a Visit** | Guest registration funnel, campus directions, service guidelines | Real Embu location coordinates, honest PENDING schedule flags |
-| `/about/` | **About PMC** | History, vision, episcopal leadership, and regional assemblies | Bishop Dr. David Mutweri biography & branch directory |
-| `/contact/` | **Contact Channels** | Community communication links, prayer requests, social channels | Official Facebook page, YouTube channel, direct inquiry form |
-| `/hymns/` | **Hymns Library** | Public domain hymnbook with lyrics & traditional translations | Classical hymns & verified seminar recordings |
-| `/riddles/` | **Faith Riddles** | Family & youth biblical trivia and engagement questions | Scripture-backed study notes |
-| `/jokes/` | **Christian Humor** | Wholesome, uplifting fellowship stories and clean wit | Community-curated clean humor |
-| `/news/` | **Ministry News** | Community outreach updates, regional conferences, mission digests | Embu headquarters & regional branch announcements |
+## Working on the site
 
----
-
-## Shared Content Feed
-
-Sermons, hymns, riddles, jokes, verses, events, announcements, campuses and
-church contact details live in [`data/`](data/README.md). The website, the
-Perazim web app and the Android app all read that feed, so content is edited
-once. Edit `data/csv/*.csv`, then run `python3 scripts/build_data.py`.
-
----
-
-## Design System & Visual Standard
-
-### 1. Typography Hierarchy
-- **Display Headlines**: `Plus Jakarta Sans` (Weight: 900) — Bold, high-energy modern sans-serif.
-- **Editorial Sub-headings & Accents**: `Instrument Serif` (Style: Italic) — Sophisticated human warmth reminiscent of modern editorial publications.
-- **Body & Interface**: Inter / System UI Sans-serif — Highly legible across high-DPI displays.
-
-### 2. Color System & Design Tokens
-```css
-:root {
-  --color-bg: #f8fafc;
-  --color-surface: #ffffff;
-  --color-text-primary: #0f172a;
-  --color-text-secondary: #475569;
-  --color-accent-purple: #7c3aed;  /* Interactive accent */
-  --color-accent-orange: #ea580c;  /* Warm highlight */
-  --color-border: #e2e8f0;
-}
-
-[data-theme="dark"] {
-  --color-bg: #090d16;
-  --color-surface: #111827;
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #94a3b8;
-  --color-border: #1e293b;
-}
-```
-
-### 3. Motion & Micro-Interactions
-- **Ambient Vector Float**: Floating SVG ambient orbs with subtle keyframe breathing animations.
-- **Scroll Reveal**: Native `IntersectionObserver` with staggered cubic-bezier entrance transitions.
-- **Perspective 3D Tilt**: Hardware-accelerated 3D hover response on campus and sermon cards.
-- **Theme Switcher**: 3-state stateful toggle (`light` / `dark` / `auto`) synced via `localStorage` with zero-flash pre-hydration in `<head>`.
-
----
-
-## Trending Features & Content Strategy (September 2026)
-
-### 1. High-Impact Interactive Features
-- **"Sunday Stream & Interactive Worship" Dynamic Banner**: Time-aware hero banner that shifts state on Sunday mornings (e.g., 9:00 AM – 1:00 PM EAT) to display a bold "Service is Live Now" player, falling back to recent seminar highlights during weekdays.
-- **Daily Scripture & Audio Manna Widget**: Daily verse card paired with a 60-second audio devotional snippet from Bishop Dr. David Mutweri with 1-click WhatsApp/Facebook sharing.
-- **Interactive Prayer Wall & Testimony Board**: Moderated community board with an encouraging "🙏 I Prayed for This" counter.
-- **Fast "Plan Your Visit" WhatsApp Concierge**: Floating action pill button pre-filled for first-time guests connecting directly to church hospitality (WhatsApp is Kenya's #1 channel).
-- **Offline PWA Caching**: Lightweight service worker caching hymns, prayer declarations, and audio for low-connectivity environments.
-
-### 2. Curated License-Free Content Pillars
-- **Consistent Visual Aesthetic**: Warm natural textures (wood, linen, earth tones), golden-hour sunlight, and genuine acoustic worship. Real church photography blended with CC0 royalty-free imagery.
-- **Public Domain Hymns**: Classical pre-1928 hymns (*Amazing Grace*, *Great Is Thy Faithfulness*, *It Is Well With My Soul*, *Blessed Assurance*, and traditional Swahili translations like *Mwathani Mwega*).
-- **Biblical Riddles & Trivia**: Clean, family-friendly questions driving organic dwell time and youth engagement.
-- **Wholesome Christian Humor**: Relatable, clean church wit and fellowship moments.
-- **Uplifting Ministry News**: 2-minute digests covering community outreach in Embu, regional leaders' conferences, and uplifting faith milestones.
-
----
-
-## Data Integrity Policy
-
-This project strictly enforces **Zero-Fabrication Standards**:
-1. **Real Media Only**: All photography originates from verified Perazim Mission Church Facebook archives and high-resolution church event archives (`assets/fb_photos_web/`, `assets/bishop_real.jpg`). No generic Unsplash stock models or fake crowd shots.
-2. **Authentic Leadership & Location**: All leadership bios represent real church leadership (Bishop Dr. David Mutweri, Embu, Kenya).
-3. **Explicit PENDING State**: Any operational detail not yet officially verified (such as specific Sunday morning service slot adjustments) remains explicitly flagged as `[PENDING]` rather than inventing placeholders.
-
----
-
-## Directory Structure
-
-```text
-perazim-site/
-├── index.html                   # Main Landing Page
-├── about/
-│   └── index.html               # About & Leadership Page
-├── sermons/
-│   └── index.html               # Sermons Archive
-├── visit/
-│   └── index.html               # Plan a Visit Page
-├── contact/
-│   └── index.html               # Contact & Inquiries Page
-├── hymns/
-│   └── index.html               # Public Domain Hymnbook Archive
-├── riddles/
-│   └── index.html               # Bible Riddles & Faith Trivia
-├── jokes/
-│   └── index.html               # Wholesome Christian Humor
-├── news/
-│   └── index.html               # Inspiring Ministry News & Announcements
-├── assets/
-│   ├── styles.css               # Core CSS Design Engine & Motion Rules
-│   ├── app.js                   # Navigation, Theme Engine, Parallax & Observers
-│   ├── sermons.json             # Verified Sermon Catalog
-│   ├── gallery_manifest.json    # Photo Gallery Metadata
-│   ├── bishop_real.jpg          # Verified Portrait of Bishop Dr. David Mutweri
-│   ├── church_cover_real.jpg    # Verified Church Building Cover Photo
-│   ├── logo-transparent.png     # Transparent Vector Logo Mark
-│   ├── favicon.png              # Site Favicon
-│   └── fb_photos_web/           # Verified Church Congregation Photography
-├── recon/                       # Design Benchmarking & Verification Tooling
-│   ├── verify_v5upgrade.py      # Automated 86-Point DOM/CSS Test Suite
-│   ├── palette_extract.py       # Reference Brand Palette Extraction Tool
-│   ├── v5_comparison_report.md  # Benchmarking Against Industry Sites
-│   └── prometheus_scrape_v5.json# Scraping Metadata
-├── ARCHITECTURE.md              # Technical Architecture & Standards
-├── CONTRIBUTING.md              # Contribution Guidelines
-├── LICENSE                      # Open-Source License
-├── .editorconfig                # Coding Style Configuration
-└── .gitignore                   # Version Control Exclusions
-```
-
----
-
-## Automated Verification & Quality Gates
-
-The codebase includes an automated audit suite verifying 86 distinct structural, CSS, script, and content integrity rules:
+The shared head, header, hero and footer of every page are generated so they cannot drift apart:
 
 ```bash
-# Run the complete test suite
-python3 recon/verify_v5upgrade.py
+python3 scripts/sync_site.py          # rewrite shared parts, sitemap.xml, manifest
+python3 scripts/sync_site.py --check  # fail if anything is out of date
 ```
 
----
+Edit page text in each page's own `<main>`. To change the title, description, hero text,
+buttons or verse of a page, or the menu, edit `PAGES` / `MENU` in `scripts/sync_site.py`,
+then run it. Sermons, hymns, riddles, jokes, news and contact details come from the
+shared feed: edit `data/csv/*.csv` and run `python3 scripts/build_data.py` (see
+[data/README.md](data/README.md)).
 
-## Local Development & Preview
-
-Serve the site locally with any static web server:
+## Testing
 
 ```bash
-# Using Python
-python3 -m http.server 8090
+python3 scripts/sync_site.py --check
+python3 scripts/build_data.py --check
+python3 scripts/check_site.py          # links, anchors, images, headings, SEO, sitemap
 
-# Or using Node.js / npx
-npx serve . -p 8090
+python3 -m http.server 8123 &          # then, with Playwright installed:
+node scripts/e2e_site.js               # every page on phone, tablet, laptop, desktop
 ```
 
-Visit [`http://localhost:8090`](http://localhost:8090) in your browser.
+`check_site.py` and the two `--check` commands also run on every pull request
+(`.github/workflows/`). `e2e_site.js` checks, for 14 pages at five screen sizes: no sideways
+scrolling, fonts and images load, no console errors, burger menu (button, Escape, outside
+click, every link), tap-target size, plus theme toggle, copy button, FAQ, scroll reveal,
+reduced motion, no-JavaScript, keyboard skip link and the 404 page.
 
----
+## Deploying
 
-## Deployment Guide
+GitHub Pages, branch `main`, folder `/ (root)`. If the site moves to its own domain, change
+`SITE` in `scripts/sync_site.py` (and the 404 base path), run it, and update `robots.txt`.
 
-### GitHub Pages
-1. Push this repository to GitHub.
-2. In your repository settings, navigate to **Pages**.
-3. Under **Source**, select **Deploy from a branch** and set `Branch: main`, `Folder: / (root)`.
-4. Save. Your site will be live within seconds.
+## Facts the church must confirm
 
----
+Search the pages for `CHURCH TO CONFIRM` (HTML comments): group leaders' names, children's
+ages for Sunday school, how Sunday school and Bible hour overlap, parking and matatu
+directions. Do not invent these.
 
-## Contributing
+## Licence
 
-Please review [CONTRIBUTING.md](CONTRIBUTING.md) before submitting pull requests. All changes must pass `python3 recon/verify_v5upgrade.py`.
-
----
-
-## License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+MIT, see [LICENSE](LICENSE).

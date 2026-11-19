@@ -94,19 +94,19 @@ def html_sermons(items):
         vid = youtube_id(s["youtube_url"])
         href = s["youtube_url"] or s["audio_url"] or "#"
         poster = (
-            f'<div class="card-poster-img-wrap"><img src="https://i.ytimg.com/vi/{vid}/maxresdefault.jpg" '
-            f'alt="Sermon thumbnail: {esc(s["title"])}" loading="lazy" class="card-poster-img" />'
+            f'<div class="card-poster-img-wrap"><img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" '
+            f'alt="" loading="lazy" width="480" height="360" class="card-poster-img" />'
             '<div class="card-poster-overlay"></div></div>'
             if vid else ""
         )
         series = f' — {esc(s["series"])}' if s["series"] else ""
-        scripture = f'<p class="message-sub">{esc(s["scripture"])}</p>' if s["scripture"] else ""
+        scripture = f'<p>{esc(s["scripture"])}</p>' if s["scripture"] else ""
         out.append(
-            f'<article class="tilt-card message-card" data-tilt><a href="{esc(href)}" target="_blank" rel="noopener" '
-            f'aria-label="Watch {esc(s["title"])}" class="sermon-link">{poster}<div class="message-card-body">'
-            f'<h3 class="message-title">{esc(s["title"])}</h3>'
-            f'<p class="message-sub"><strong>{esc(s["speaker"])}</strong>{series}</p>{scripture}'
-            f'<span class="message-date">{esc(s["date"])}</span></div></a></article>'
+            f'<article class="info-card sermon-card"><a href="{esc(href)}" target="_blank" rel="noopener" '
+            f'class="sermon-link">{poster}<div class="sermon-body">'
+            f'<h3>{esc(s["title"])}</h3>'
+            f'<p><strong>{esc(s["speaker"])}</strong>{series}</p>{scripture}'
+            f'<p class="sermon-date">{esc(s["date"])}</p></div></a></article>'
         )
     return out
 
@@ -154,13 +154,19 @@ def html_announcements(items):
 def html_campuses(items):
     out = []
     for c in items:
-        times = esc(c["service_times"]) if c["service_times"] else '<span class="campus-pending-chip">TBC</span>'
+        times = (
+            f'<p class="campus-times">{esc(c["service_times"])}</p>'
+            if c["service_times"]
+            else '<p class="campus-times">Sunday service</p>'
+                 '<p class="campus-address">Message us on Facebook for this week\'s times.</p>'
+        )
         out.append(
-            f'<article class="campus-card campus-featured tilt-card"><div class="campus-img-wrap">'
-            f'<img src="{esc(c["photo"])}" alt="{esc(c["name"])}"></div><div class="campus-details"><div>'
+            f'<article class="campus-card campus-featured"><div class="campus-img-wrap">'
+            f'<img src="{esc(c["photo"])}" alt="A service at {esc(c["name"])}" width="160" height="160" loading="lazy"></div>'
+            f'<div class="campus-details"><div>'
             f'<span class="kicker">Main campus</span><h3>{esc(c["name"])}</h3>'
-            f'<p class="campus-times">Sundays {times}</p><p class="campus-address">{esc(c["area"])}</p></div>'
-            f'<a class="arrow-icon-btn" href="visit/index.html" aria-label="Plan a visit to {esc(c["name"])}">↗</a></div></article>'
+            f'{times}<p class="campus-address">{esc(c["area"])}</p></div>'
+            f'<a class="arrow-icon-btn" href="visit/" aria-label="Plan a visit to {esc(c["name"])}">↗</a></div></article>'
         )
     return out
 

@@ -1,71 +1,55 @@
-# Technical Architecture & Engineering Standards
+# Architecture
 
-## 1. Core Architectural Principles
+## Principles
 
-- **Zero Heavy Dependencies**: Pure semantic HTML5, modern vanilla CSS3, and lightweight ES6+ JavaScript. No bulky external frameworks (React, Next.js, Vue) to guarantee maximum performance, sub-100ms first paint, and total portability.
-- **Progressive Enhancement**: All primary content, sermon listings, branch listings, and navigational links remain 100% accessible with JavaScript disabled.
-- **Hardware-Accelerated Animation**: Transitions utilize GPU-friendly properties (`transform`, `opacity`, `backdrop-filter`) with strict `prefers-reduced-motion` compliance.
+- Static HTML, CSS and vanilla JavaScript. No framework, no bundler, no template engine.
+- Content first: every page reads fully without JavaScript. JavaScript only adds the menu,
+  theme choice, scroll reveal and copy buttons (`assets/app.js`).
+- Animations use `transform`, `opacity` and `filter` and respect `prefers-reduced-motion`.
+- One stylesheet (`assets/styles.css`), one script (`assets/app.js`).
 
-## 2. DOM & Layout Architecture
+## How a page is built
 
 ```
-[Viewport]
-  ├── <header class="site-header"> (Sticky, dynamic blur on scroll)
-  │     ├── <a class="brand-logo">
-  │     ├── <nav class="site-nav">
-  │     └── <div class="theme-switch-wrapper">
-  ├── <main id="main-content">
-  │     ├── <section class="hero-island">
-  │     ├── <section class="values-grid">
-  │     ├── <section class="campus-carousel">
-  │     └── <section class="sermon-highlight">
-  └── <footer class="site-footer">
-        ├── <div class="footer-links">
-        └── <div class="footer-copyright">
+<head>            generated  (title, description, canonical, Open Graph, Twitter, icons,
+                             theme-color, JSON-LD, fonts, stylesheet)
+<body>
+  skip link, floating scripture words, header + burger menu     generated
+  <main id="main-content">
+    <!-- chrome:hero --> ... <!-- /chrome:hero -->              generated
+    page sections                                               written by hand
+  </main>
+  footer                                                        generated
+  <script src="assets/app.js">
 ```
 
-## 3. The 3-State Theme Engine
+`scripts/sync_site.py` owns everything marked generated. Its `PAGES` table holds each page's
+SEO text, hero painting, headline, buttons and verse; `MENU` holds the navigation. It also writes
+`sitemap.xml` and `manifest.webmanifest`. Run it after any change to those tables; `--check` is
+used in CI. The shared content feed (`data/`, `scripts/build_data.py`) fills the
+`<!-- feed:NAME -->` blocks in the same pages. The two generators work on different markers and
+do not touch each other's output.
 
-The theme state is governed by three possible values:
-1. `light`: Explicitly forces light surface colors.
-2. `dark`: Explicitly forces dark slate colors.
-3. `auto`: Dynamically queries `window.matchMedia('(prefers-color-scheme: dark)')` while responding to OS changes.
+## Theme
 
-### Storage & Non-FOUC (Flash of Unstyled Content) Injection
-To prevent any visual flash during page load, the following script runs synchronously at the earliest point in `<head>`:
-```javascript
-(function() {
-  const saved = localStorage.getItem('pmc_theme') || 'auto';
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const active = saved === 'auto' ? (prefersDark ? 'dark' : 'light') : saved;
-  document.documentElement.setAttribute('data-theme', active);
-})();
-```
+`<html data-theme="light|dark|auto">`. Light is the default. The button cycles
+light, dark, auto and saves a non-default choice in `localStorage` (`perazim-theme`). A small
+script in `<head>` applies it before first paint to avoid a flash. `auto` follows the system.
+All colours come from CSS custom properties in section 1 of `styles.css`.
 
-## 4. CSS Engineering & Tokens
+## Colour rules
 
-### Design System Tokens
-All spacing, typography scale, and color values are anchored on standard 4px / 8px geometric grid increments.
+- Dark purple text on light glass; white text only on deep purple or pink cards.
+- Dark text on orange. Small orange text uses `--orange-ink` for contrast.
+- Cards cycle purple, pink, orange (`.card-purple`, `.card-pink`, `.card-orange`).
 
-```css
-:root {
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
+## Stylesheet map
 
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-full: 9999px;
-  
-  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-}
-```
+1 tokens, 2 base and ambient words, 3 buttons, 4 header and burger, 5 page hero,
+6 sections and cards, 7 footer, 8 scroll reveal, 8b home, 9 responsive, reduced motion, print.
 
-## 5. Automated Quality & Verification Gates
+## Quality gates
 
-The repository enforces automated verification via `recon/verify_v5upgrade.py`. Prior to merging any branch or deploying to production, all 86 verification criteria must return `true`.
+`scripts/sync_site.py --check`, `scripts/build_data.py --check`, `scripts/check_site.py`
+(static) and `scripts/e2e_site.js` (browser, five screen sizes). The older `recon/` scripts
+belong to the earlier design and are kept only as history.

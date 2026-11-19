@@ -1,0 +1,29 @@
+{
+  "name": "Perazim Mission Church, Embu",
+  "short_name": "Perazim",
+  "description": "Perazim Mission Church is a Pentecostal and Evangelical church family in Manyatta, Embu, Kenya. Plan a visit, watch sermons and connect with us.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "lang": "en",
+  "background_color": "#FFFFFF",
+  "theme_color": "#681A7D",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
