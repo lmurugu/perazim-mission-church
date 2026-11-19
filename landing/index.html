@@ -11,6 +11,14 @@
   <link rel="icon" type="image/png" href="../assets/logo-transparent.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap">
   <link rel="stylesheet" href="../assets/styles.css">
+  <script>
+    // Follow the visitor's saved theme (light, dark or auto) before first paint.
+    (function () {
+      var t = 'light';
+      try { var s = localStorage.getItem('perazim-theme'); if (s === 'dark' || s === 'auto') t = s; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <style>
     /* Landing page: a full-height scene switcher. Scenes change every few seconds
        until a visitor picks one. Colours come from the tokens in assets/styles.css. */
