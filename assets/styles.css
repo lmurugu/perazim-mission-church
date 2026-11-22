@@ -530,6 +530,17 @@ body.page-home .nav-toggle:hover svg { filter: drop-shadow(0 0 8px rgba(225, 125
   padding: calc(var(--nav-h) + 56px) var(--gutter) 40px;
   background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 36%, #FCEAF3 76%, #FFF0E3 100%);
 }
+/* Dark theme: a dark hero so the light hero text stays readable. */
+:root[data-theme="dark"] .home-hero { background: linear-gradient(180deg, #07040A 0%, #0E0716 60%, #1A0B22 100%); }
+:root[data-theme="dark"] .home-title { text-shadow: 0 2px 16px rgba(0, 0, 0, .7); }
+:root[data-theme="dark"] .home-kicker { color: var(--orange-soft); }
+:root[data-theme="dark"] .home-lead { color: var(--ink-soft); }
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="auto"] .home-hero { background: linear-gradient(180deg, #07040A 0%, #0E0716 60%, #1A0B22 100%); }
+  :root[data-theme="auto"] .home-title { text-shadow: 0 2px 16px rgba(0, 0, 0, .7); }
+  :root[data-theme="auto"] .home-kicker { color: var(--orange-soft); }
+  :root[data-theme="auto"] .home-lead { color: var(--ink-soft); }
+}
 .home-hero::before {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background:
