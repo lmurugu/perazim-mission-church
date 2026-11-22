@@ -183,7 +183,7 @@ PAGES = {
 }
 
 MENU = [  # (key, label) in menu order; None = group heading
-    ("", "Home"), ("visit", "Visit"), ("sermons", "Sermons"), ("ministries", "Ministries"), ("give", "Give"),
+    ("", "Home"), ("landing", "Welcome"), ("visit", "Visit"), ("sermons", "Sermons"), ("ministries", "Ministries"), ("give", "Give"),
     ("about", "About"), ("contact", "Contact"),
     ("#", "More"), ("next-steps", "Next steps"), ("news", "News & events"),
     ("#", "For the family"), ("hymns", "Hymns"), ("riddles", "Bible riddles"), ("jokes", "Christian jokes"),
@@ -522,6 +522,8 @@ def sitemap():
             continue
         pri = "1.0" if key == "" else "0.8" if key in ("visit", "sermons", "give", "about", "contact", "ministries") else "0.6"
         rows.append(f"  <url><loc>{page_url(key)}</loc><lastmod>{LASTMOD}</lastmod><priority>{pri}</priority></url>")
+    # the welcome page is hand-written (landing/index.html) but listed in the menu, so include it too
+    rows.append(f"  <url><loc>{SITE}landing/</loc><lastmod>{LASTMOD}</lastmod><priority>0.7</priority></url>")
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(rows) + "\n</urlset>\n"
 
 
