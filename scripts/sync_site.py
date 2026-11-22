@@ -35,14 +35,23 @@ def wa(text):
     return f"{WA}?text={quote(text)}"
 
 
-# slug -> (alt text). Files live in assets/heroes/<slug>.webp and .jpg (1280x720).
+# slug -> (alt text). Images are church photos in assets/church-photos/<file>.webp and .jpg (1280x720).
 ART = {
-    "prodigal-son": "Watercolor painting of a father running to welcome his returning son",
-    "sermon-on-the-mount": "Watercolor painting of Jesus teaching a crowd on a hillside above the Sea of Galilee",
-    "good-samaritan": "Watercolor painting of the Good Samaritan caring for an injured traveler",
-    "five-loaves-two-fish": "Watercolor painting of a boy offering loaves and fish to Jesus",
-    "calling-the-disciples": "Watercolor painting of Jesus calling fishermen at the Sea of Galilee",
-    "jesus-at-the-door": "Watercolor painting of Jesus knocking at a glowing wooden door",
+    "prodigal-son": "Church stage with a singer, band and speakers in front of a red and navy backdrop, Perazim Mission Church",
+    "sermon-on-the-mount": "Church worship leader singing at a microphone in front of a band and a red and blue stage backdrop, Perazim Mission Church",
+    "good-samaritan": "Church congregation with hands raised in worship, in front of purple and red drapes, Perazim Mission Church",
+    "five-loaves-two-fish": "Church stage with a worship team and congregation during a service, Perazim Mission Church",
+    "calling-the-disciples": "Church stage with red, yellow and navy curtains and a choir in red, Perazim Mission Church",
+    "jesus-at-the-door": "Church stage with red, yellow and navy curtains and a choir in red, Perazim Mission Church",
+}
+# slug -> photo file name under assets/church-photos/ (without extension)
+ART_FILE = {
+    "prodigal-son": "card-visit",
+    "sermon-on-the-mount": "card-sermons",
+    "good-samaritan": "card-ministries",
+    "five-loaves-two-fish": "card-give",
+    "calling-the-disciples": "card-about",
+    "jesus-at-the-door": "card-contact",
 }
 
 # key '' is the home page. href values are relative to the site root.
@@ -174,7 +183,7 @@ PAGES = {
 }
 
 MENU = [  # (key, label) in menu order; None = group heading
-    ("", "Home"), ("visit", "Visit"), ("sermons", "Sermons"), ("ministries", "Ministries"), ("give", "Give"),
+    ("", "Home"), ("landing", "Welcome"), ("visit", "Visit"), ("sermons", "Sermons"), ("ministries", "Ministries"), ("give", "Give"),
     ("about", "About"), ("contact", "Contact"),
     ("#", "More"), ("next-steps", "Next steps"), ("news", "News & events"),
     ("#", "For the family"), ("hymns", "Hymns"), ("riddles", "Bible riddles"), ("jokes", "Christian jokes"),
@@ -275,7 +284,7 @@ def render_head(key, cfg, main_html):
         fam = "Fraunces:wght@600;700&family=" + fam
     robots = "noindex" if cfg.get("noindex") else "index, follow, max-image-preview:large"
     t, d = esc(cfg["title"]), esc(cfg["desc"])
-    hero_img = f"{p}assets/life/life-1.webp" if key == "" else f"{p}assets/heroes/{cfg['art']}.webp"
+    hero_img = f"{p}assets/life/life-1.webp" if key == "" else f"{p}assets/church-photos/{ART_FILE[cfg['art']]}.webp"
     lines = [
         '<meta charset="UTF-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
@@ -375,8 +384,9 @@ def render_header(key, cfg):
 def picture(p, slug, alt, eager=True, pos=None):
     style = f' style="object-position:{pos}"' if pos else ""
     load = 'fetchpriority="high"' if eager else 'loading="lazy"'
-    return (f'<picture class="hero-art"><source srcset="{p}assets/heroes/{slug}.webp" type="image/webp">'
-            f'<img src="{p}assets/heroes/{slug}.jpg" alt="{esc(alt)}" width="1280" height="720" {load}{style}></picture>')
+    f = ART_FILE[slug]
+    return (f'<picture class="hero-art"><source srcset="{p}assets/church-photos/{f}.webp" type="image/webp">'
+            f'<img src="{p}assets/church-photos/{f}.jpg" alt="{esc(alt)}" width="1280" height="720" {load}{style}></picture>')
 
 
 def render_hero(key, cfg):
@@ -512,6 +522,8 @@ def sitemap():
             continue
         pri = "1.0" if key == "" else "0.8" if key in ("visit", "sermons", "give", "about", "contact", "ministries") else "0.6"
         rows.append(f"  <url><loc>{page_url(key)}</loc><lastmod>{LASTMOD}</lastmod><priority>{pri}</priority></url>")
+    # the welcome page is hand-written (landing/index.html) but listed in the menu, so include it too
+    rows.append(f"  <url><loc>{SITE}landing/</loc><lastmod>{LASTMOD}</lastmod><priority>0.7</priority></url>")
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(rows) + "\n</urlset>\n"
 
 
