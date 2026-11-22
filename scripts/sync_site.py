@@ -27,7 +27,7 @@ PHONE = "+254710772227"
 WA = "https://wa.me/254710772227"
 FB = "https://web.facebook.com/perazim.missioncentre"
 YT = "https://www.youtube.com/@perazimchurchembu"
-MAP = "https://www.google.com/maps/search/?api=1&query=Ngariama%2C+Embu%2C+Kenya"
+MAP = "https://www.google.com/maps/place/Perazim+Mission+Center+HQ/@-0.5394531,37.4604007,17z/data=!3m1!4b1!4m6!3m5!1s0x18262e00d46a7e0f:0x76bad90e62c7a715!8m2!3d-0.5394585!4d37.4629756!16s%2Fg%2F11b77c1qfz"
 
 
 def wa(text):
@@ -237,7 +237,8 @@ def jsonld(key, cfg, main_html):
         "name": NAME, "alternateName": "PMC Embu", "slogan": "The Place of Great Breakthrough",
         "description": PAGES[""]["desc"], "url": SITE,
         "logo": SITE + "assets/logo-transparent.png", "image": SITE + "assets/og-default.jpg",
-        "address": {"@type": "PostalAddress", "addressLocality": "Ngariama", "addressRegion": "Embu County", "addressCountry": "KE"},
+        "address": {"@type": "PostalAddress", "streetAddress": "Siakago Road", "addressLocality": "Embu", "addressRegion": "Embu County", "addressCountry": "KE"},
+        "geo": {"@type": "GeoCoordinates", "latitude": -0.5394585, "longitude": 37.4629756},
         "telephone": PHONE, "email": "info@perazimchurch.org", "knowsLanguage": ["en", "sw"],
         "founder": {"@type": "Person", "name": "Bishop Dr David Mutweri"},
         "openingHoursSpecification": [
@@ -429,7 +430,7 @@ def render_footer(key, cfg):
         <h2>Visit</h2>
         <ul>
           <li>Embu Central Campus</li>
-          <li>Ngariama, Embu County</li>
+          <li>Siakago Road, Embu</li>
           <li>Sundays: Bible hour 9:00 AM, main service 10:00 AM</li>
           <li><a href="{MAP.replace("&", "&amp;")}" target="_blank" rel="noopener">Get directions</a></li>
         </ul>
