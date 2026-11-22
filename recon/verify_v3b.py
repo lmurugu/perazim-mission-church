@@ -35,7 +35,7 @@ directive_strings = [
     "Embu Central Campus",  # first campus name
     "Mwea Campus",
     "Rombo Campus",
-    "Manyatta, Embu",  # first campus address
+    "Ngariama, Embu",  # first campus address
     "Kirinyaga County",  # Mwea address
     "Rombo, Kenya",  # Rombo address
     "Global Leadership",  # leadership kicker

@@ -27,7 +27,7 @@ PHONE = "+254710772227"
 WA = "https://wa.me/254710772227"
 FB = "https://web.facebook.com/perazim.missioncentre"
 YT = "https://www.youtube.com/@perazimchurchembu"
-MAP = "https://www.google.com/maps/search/?api=1&query=Manyatta%2C+Embu%2C+Kenya"
+MAP = "https://www.google.com/maps/search/?api=1&query=Ngariama%2C+Embu%2C+Kenya"
 
 
 def wa(text):
@@ -57,13 +57,13 @@ ART_FILE = {
 # key '' is the home page. href values are relative to the site root.
 PAGES = {
     "": dict(
-        title="Perazim Mission Church, Embu | Sunday worship in Manyatta",
-        desc="Perazim Mission Church is a Pentecostal and Evangelical church family in Manyatta, Embu, Kenya. Plan a visit, watch sermons and connect with us.",
+        title="Perazim Mission Church, Embu | Sunday worship in Ngariama",
+        desc="Perazim Mission Church is a Pentecostal and Evangelical church family in Ngariama, Embu, Kenya. Plan a visit, watch sermons and connect with us.",
         nav="Home", art="prodigal-son",
     ),
     "visit": dict(
         title="Plan a Visit | Perazim Mission Church, Embu",
-        desc="Plan your first visit to Perazim Mission Church in Manyatta, Embu. Sundays: Bible hour 9:00 AM, main service 10:00 AM. Directions and what to expect.",
+        desc="Plan your first visit to Perazim Mission Church in Ngariama, Embu. Sundays: Bible hour 9:00 AM, main service 10:00 AM. Directions and what to expect.",
         nav="Visit", art="prodigal-son",
         kicker="Plan a visit", h1="We'd love to <em>meet you</em>",
         lead="Whether it's your first Sunday or you're coming back after a while, here's what you need to know.",
@@ -104,13 +104,13 @@ PAGES = {
         desc="Perazim Mission Church is a Pentecostal and Evangelical church in Embu, Kenya, led by Bishop Dr David Mutweri. Our name, our values and our leadership.",
         nav="About", art="calling-the-disciples",
         kicker="About us", h1="The place of <em>great breakthrough</em>",
-        lead="Perazim Mission Church is a Pentecostal and Evangelical family of faith in Manyatta, Embu, on the slopes of Mount Kenya.",
+        lead="Perazim Mission Church is a Pentecostal and Evangelical family of faith in Ngariama, Embu, on the slopes of Mount Kenya.",
         ctas=[("primary", "Plan my visit", "visit/", False), ("secondary", "What we believe", "#beliefs", False)],
         verse=("Jesus calls the first disciples · Matthew 4", "Follow me, and I will make you fishers of men.", "Matthew 4:19 (ESV)"),
     ),
     "contact": dict(
         title="Contact Us | Perazim Mission Church, Embu",
-        desc="Contact Perazim Mission Church in Embu, Kenya: call or WhatsApp 0710 772 227, email info@perazimchurch.org, or visit us in Manyatta.",
+        desc="Contact Perazim Mission Church in Embu, Kenya: call or WhatsApp 0710 772 227, email info@perazimchurch.org, or visit us in Ngariama.",
         nav="Contact", art="jesus-at-the-door",
         kicker="Contact", h1="Get in <em>touch</em>",
         lead="Have a question, a prayer request, or want to visit? We'd love to hear from you.",
@@ -237,7 +237,7 @@ def jsonld(key, cfg, main_html):
         "name": NAME, "alternateName": "PMC Embu", "slogan": "The Place of Great Breakthrough",
         "description": PAGES[""]["desc"], "url": SITE,
         "logo": SITE + "assets/logo-transparent.png", "image": SITE + "assets/og-default.jpg",
-        "address": {"@type": "PostalAddress", "addressLocality": "Manyatta", "addressRegion": "Embu County", "addressCountry": "KE"},
+        "address": {"@type": "PostalAddress", "addressLocality": "Ngariama", "addressRegion": "Embu County", "addressCountry": "KE"},
         "telephone": PHONE, "email": "info@perazimchurch.org", "knowsLanguage": ["en", "sw"],
         "founder": {"@type": "Person", "name": "Bishop Dr David Mutweri"},
         "openingHoursSpecification": [
@@ -429,7 +429,7 @@ def render_footer(key, cfg):
         <h2>Visit</h2>
         <ul>
           <li>Embu Central Campus</li>
-          <li>Manyatta, Embu County</li>
+          <li>Ngariama, Embu County</li>
           <li>Sundays: Bible hour 9:00 AM, main service 10:00 AM</li>
           <li><a href="{MAP.replace("&", "&amp;")}" target="_blank" rel="noopener">Get directions</a></li>
         </ul>
@@ -459,9 +459,9 @@ def render_home_hero(cfg):
     return f'''<section class="home-hero" aria-labelledby="page-title">
       <div class="home-hero-inner">
         <img class="home-logo" src="assets/logo-transparent.png" alt="Perazim Mission Church logo" width="300" height="300" fetchpriority="high">
-        <p class="home-kicker">Sundays in Manyatta, Embu</p>
+        <p class="home-kicker">Sundays in Ngariama, Embu</p>
         <h1 id="page-title" class="home-title">For God. For People. <em>For the City.</em></h1>
-        <p class="home-lead">A Christ-centred church family worshipping together in Manyatta, Embu. Come as you are. You belong here.</p>
+        <p class="home-lead">A Christ-centred church family worshipping together in Ngariama, Embu. Come as you are. You belong here.</p>
         <div class="hero-actions">
           <a class="btn btn-primary cta-pulse" href="visit/">Plan my visit</a>
           <a class="btn btn-secondary" href="{FB}" target="_blank" rel="noopener">Watch live on Facebook</a>
